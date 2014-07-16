@@ -38,9 +38,12 @@ import numpy as np
 import pandas as pd
 import pysal as ps
 import multiprocessing as mp
+import matplotlib.pyplot as plt
 from itertools import izip,count
 from pyGDsandbox.geo_tools import clip_shp
 from pyGDsandbox.dataIO import df2dbf
+from pysal.contrib.viz import mapping as maps
+from matplotlib.colors import colorConverter as cc
 
 class CentFinder():
     """
@@ -150,6 +153,44 @@ class CentFinder():
                 newCores.append(minp)
             self.sClus=sClusNew
             self.cores=newCores
+
+class RLabel:
+    """Takes 'all' and obtains a pseudo p-value for statistical difference
+    of the mean between the two groups in 'all'.  Allows for testing against
+    the universe of observations versus against the remaining observations.
+    Arguments:
+        *  all=[[values_in_group1],[values_in_group2]] 
+        *  useAll = When True test group1 against (group1+group2); when False
+                    test group1 against group2
+    Attributes:
+        * mean0
+        * mean1
+        * permutations
+        * diff=difference of means of observed groups
+        * diffs=list of differences of means for simulated groups
+        * p_sim
+        """
+    def __init__(self,all,permutations=99999,useAll=False):
+        allT=all[0]+all[1]
+        self.permutations=permutations
+        if useAll:
+            self.mean0,self.mean1=np.mean(all[0]),np.mean(allT)
+        else:
+            self.mean0,self.mean1=np.mean(all[0]),np.mean(all[1])
+        self.diff=self.mean0-self.mean1
+        self.absDiff=np.abs(self.diff)
+        sep=len(all[0])
+        diffs=[self.__calc(allT,sep,useAll) for i in xrange(permutations)]
+        self.diffs=diffs
+        self.p_sim=(sum(diffs >= self.absDiff)+1.)/(permutations+1.)
+
+    def __calc(self,allT,sep,useAll=False):
+        np.random.shuffle(allT)
+        if useAll:
+            diff = np.abs(np.mean(allT[:sep])-self.mean1)
+        else:    
+            diff = np.abs(np.mean(allT[:sep])-np.mean(allT[sep:]))
+        return diff
 
 def act_on_msa(empShpOut_paths, thr=0.1, permutations=9999):
     '''
@@ -310,30 +351,160 @@ def msafy(cty, cty2msa):
     except:
         return None
 
-if __name__ == "__main__":
+def evol_tab(db):
+    '''
+    Build table of evolution. Counts how many MSAs there are in every possible
+    combination for the three periods in time (1990, 2000, 2010)
+    ...
 
-    #pool = mp.Pool(mp.cpu_count())
-    seed = np.random.seed(1234)
+    Arguments
+    ---------
+    db      : DataFrame
+              Tract table with at least MSA, year and center identifiers as
+              columns
 
-    cent_out90 = '/home/dani/AAA/LargeData/T-CentersData/centers/oc0p1/noControl/nc1990rerun/'
-    cent_out90 = '/Users/dani/Desktop/test90/'
-    cent_out00 = '/home/dani/AAA/LargeData/T-CentersData/centers/oc0p1/noControl/nc2000rerun/'
-    cent_out10 = '/home/dani/AAA/LargeData/T-CentersData/centers/oc0p1/noControl/nc2010/'
+    Returns
+    -------
+    tab     : DataFrame
+              List with MSA counts indexed on the three types of MSAs
+              (no_centers, monocentric, polycentric) across the three years
+    '''
+    g = db.groupby(['msa', 'year']).apply(\
+            lambda x: x.groupby('center_id').ngroups)
+    simp = g.apply(_monopoly)
+    tab = simp.unstack().groupby([1990, 2000, 2010]).size()
+    return tab
 
-    cent_in90 = '/Users/dani/AAA/LargeData/T-CentersData/shapes/msaTracts1990polygonsSP/'
+def _monopoly(c):
+    if c == 0:
+        return 'empty'
+    elif c == 1:
+        return 'monocentric'
+    else:
+        return 'polycentric'
 
-    run90 = True
-    if run90:
-        empF90 = '/Users/dani/AAA/LargeData/T-CentersData/attributes/3-empDen/empDen1990/'
-        emp90 = pd.concat([load_msa_data(empF90+f, y90=True) for f in os.listdir(empF90)])
-        emp90['dens_raw'] = (emp90['emp'] * 1.) / emp90['Shape_area']
-        emp90['GISJOIN'] = emp90.index
-        '''
-        pars = [(emp90[emp90['msa']==msa], None, cent_out90) \
-                for msa in emp90['msa'].unique()]
-        '''
-        pars = [(emp90[emp90['msa']==msa], cent_in90+msa[1:]+'.shp', cent_out90) \
-                for msa in emp90['msa'].unique()]
+q_names = {0: 'Insignificant', 1: 'HH', 2: 'LH', 3: 'LL', 4: 'HL'}
+q_mapper = {0: cc.to_rgba('0.3'), 1: (0.75, 0, 0, 1), \
+        2: (1.0, 0.7529411764705882, 0.8, 1), \
+        3: cc.to_rgba('blue'), \
+        4: (0, 0.8, 1, 1)}
 
-        out = map(act_on_msa, pars[:1])
+def plot_lisa(lisa, st, msa, outfile=None, thr=0.05, title=''):
+    '''
+    Plot LISA results for MSAs on background map of US states
 
+    NOTE: shapefiles hardcoded linked to paths inside the function
+    ...
+
+    Arguments
+    ---------
+    lisa    : Moran_Local
+              LISA object from PySAL
+    st      : str
+              Path to states shape
+    msa     : str
+              Path to MSA points shape
+    outfile : str
+              [Optional] Path to png to be written
+    thr     : float
+              [Optional] Significance value to identify clusters
+    title   : str
+              [Optional] Title for the figure
+    title   : str
+    Returns
+    -------
+    None
+    '''
+    sig = (lisa.p_sim < thr) * 1
+    vals = pd.Series(lisa.q * sig)
+
+    states = ps.open(st)
+    pts = ps.open(msa)
+
+    fig = plt.figure(figsize=(9, 5))
+
+    base = maps.map_poly_shp(states)
+    base.set_facecolor('0.85')
+    base.set_linewidth(0.75)
+    base.set_edgecolor('0.95')
+
+    msas = pd.np.array([pt for pt in ps.open(msa)])
+    sizes = vals.apply(lambda x: 4 if x==0 else 50)
+    colors = vals.map(q_mapper)
+    colors = pd.np.array(list(colors))
+    pts = []
+    for clas in q_mapper:
+        i = vals[vals==clas].index
+        p = plt.scatter(msas[i, 0], msas[i, 1], s=sizes[i], \
+                c=colors[i, :], label=q_names[clas])
+        p.set_linewidth(0)
+        pts.append(p)
+    plt.legend(loc=3, ncol=2, fontsize=14, scatterpoints=1, frameon=False)
+
+    ax = maps.setup_ax([base] + pts)
+    #ax = maps.setup_ax(pts)
+    fig.add_axes(ax)
+    if title:
+        plt.title(title)
+    if outfile:
+        plt.savefig(outfile)
+    else:
+        plt.show()
+    return None
+
+def load_soc_ec(link):
+    msa = 'm' + link.split('/')[-1].strip('m').strip('.csv')
+    db = pd.read_csv(link, index_col=0).rename(_guess)
+    db['msa'] = msa
+    return db
+
+def _guess(id):
+    id = str(id)
+    if len(id) == 11: # 48 999 999 999
+        return 'G' + str(id)
+    if len(id) == 10: # 06 999 999 999
+        return 'G0' + str(id)
+    if len(id) == 13: # 48 999 999 999 00
+        return 'G' + str(id)
+    if len(id) == 12: # 06 999 999 999 00
+        return 'G0' + str(id)
+
+def do_rl(msas, years, perms=99):
+    g90_00 = msas.groupby(years)
+    out = []
+    for g in g90_00:
+        id, g = g
+        sub = []
+        for var in g.drop([1990, 2000, 2010], axis=1):
+            g1 = g[var]
+            rest = msas.ix[msas.index - g1.index, var]
+            all = [list(g1.values), list(rest.values)]
+            r = RLabel(all, permutations=perms, useAll=True)
+            cell = str(r.mean0) + _sign(r) + _signify(r.p_sim)
+            s = pd.Series(cell, index=[var])
+            sub.append(s)
+        sub = pd.concat(sub)
+        sub.name = id
+        out.append(sub)
+    out = pd.concat(out, axis=1).T
+    out.index = pd.MultiIndex.from_tuples(out.index, \
+            names=years)
+    return out
+
+def _sign(r):
+    if (r.mean0 - r.mean1) > 0 and r.p_sim < 0.1:
+        return '+'
+    elif (r.mean0 - r.mean1) <= 0 and r.p_sim < 0.1:
+        return '-'
+    else:
+        return ''
+
+def _signify(p):
+    if p < 0.01:
+        return '***'
+    elif 0.01 <= p < 0.05:
+        return '**'
+    elif 0.05 <= p < 0.1:
+        return '*'
+    elif p >= 0.1:
+        return ''
