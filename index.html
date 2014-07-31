@@ -39,28 +39,52 @@
       <section >
 <p>Intro here.</p>
 
-<pre class="sourceCode bibtex"><code class="sourceCode bibtex"><span class="kw">@article</span>{<span class="ot">arribasbel_kourtit_nijkamp_epc</span>,
-    <span class="dt">author</span> = &quot;<span class="st">Arribas-Bel, Daniel and Kourtit, Karima and Nijkamp, Peter</span>&quot;,
-    <span class="dt">journal</span> = &quot;<span class="st">Environment and Planning C – Government and Policy</span>&quot;,
-    <span class="dt">title</span> = &quot;<span class="st">{The socio-cultural sources of urban buzz}</span>&quot;,
-    <span class="dt">year</span> = &quot;<span class="st">in press</span>&quot;
+<h3 id="citation">Citation</h3>
+
+<pre class="sourceCode bibtex"><code class="sourceCode bibtex"><span class="kw">@article</span>{<span class="ot">doi:10.1080/02723638.2014.940693</span>,
+    <span class="dt">author</span> = &quot;<span class="st">Arribas-Bel, Daniel and Sanz-Gracia, Fernando</span>&quot;,
+    <span class="dt">journal</span> = &quot;<span class="st">{Urban Geography}</span>&quot;,
+    <span class="dt">title</span> = &quot;<span class="st">{The validity of the monocentric city model in a polycentric age: US metropolitan areas in 1990, 2000 and 2010}</span>&quot;,
+    <span class="dt">year</span> = &quot;<span class="st">in press</span>&quot;,
+    <span class="dt">pages</span> = &quot;<span class="st">{1-18}</span>&quot;,
+    <span class="dt">doi</span> = &quot;<span class="st">10.1080/02723638.2014.940693</span>&quot;,
+    <span class="dt">url</span> = &quot;<span class="st">{ http://www.tandfonline.com/doi/abs/10.1080/02723638.2014.940693}</span>&quot;,
+    <span class="dt">abstract</span> = &quot;<span class="st">{ In this article, we use local indicators of spatial association (LISA) and other spatial analysis techniques to analyze the distribution of centers with high employment density within metropolitan areas. We examine the 359 metropolitan areas across the United States at three points in time (1990, 2000, and 2010) to provide a spatio-temporal panoramic of urban spatial structure. Our analysis highlights three key findings. (1) The monocentric structure persists in a majority of metropolitan areas: 56.5% in 1990, 64.1% in 2000, and 57.7% in 2010. (2) The pattern of employment centers remains stable for most metropolitan areas: the number of centers remained the same for 74.9% of metropolitan areas between 1990 and 2000 and for 85.2% between 2000 and 2010. (3) Compared with monocentric metropolitan areas, polycentric metros are larger and more dense, with higher per-capita incomes and lower poverty rates. }</span>&quot;,
 }</code></pre>
 
 <h3 id="distribution">Distribution</h3>
-<p>The IPython Notebook that presents the process, together with the data
-required and this website, are hosted as an open repository available in the following url:</p>
+<p>Python code to reproduce the analysis in the paper is available as an
+IPython Notebook in the <a href="notebook.html"><strong>Results</strong></a></li> section of this
+site. If you are interested in downloading it, it is hosted in a GitHub
+repository, together with related data and code, in the following URL:
+</p>
 <a
     href="https://github.com/darribas/us_centers">https://github.com/darribas/us_centers</a>
 <p></p>
+
+<p>
+The repository containts the following files:
+<ul>
+    <li> <code>us_centers.ipynb</code>: notebook displayed in the section <a
+        href="notebook.html"><strong>Results</strong></a>.
+    <li> <code>employment_centers_tools.py</code>: documented Python module containing
+    all the necessary code to identify employment centers as presented in the
+    paper.
+    <li> <code>centersYYYY.geojson</code>: GeoJson files containint the
+    polygons for the centers identified in the paper. One file for each year
+    (1990, 2000, 2010).</li>
+    <li> <code>cty2msa.csv</code>: crosswalk between county and MSA used to
+    delineate MSAs in the paper (following the June 2003 definition of the
+    Census Bureau).</li>
+    <li> <code>README.md</code>: brief readme file.
+    <li> <code>LICENSE.txt</code>: license for the repository.
+</ul>
+</p>
+
+<p>
 Downloads of the repository as a single zip file are possible <a
     href="https://github.com/darribas/us_centers/archive/master.zip">here</a>.
-<p></p>
-<h3 id="data">Data</h3>
-<p>Description of the data used and why I don't post it but, however, one can
-download the outpu </p>
-
-<p>The code and text presented here is authored by Daniel Arribas-Bel and licensed under a Creative-Commons license.</p>
-
+</p>
 
 
 <h3 id="license">License</h3>
