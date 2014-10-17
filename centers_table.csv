@@ -1,0 +1,360 @@
+ID,Name,1990,2000,2010
+m10180,"Abilene, TX",1,1,1
+m10420,"Akron, OH",2,3,4
+m10500,"Albany, GA",1,2,1
+m10580,"Albany-Schenectady-Troy, NY",5,4,3
+m10740,"Albuquerque, NM",2,1,1
+m10780,"Alexandria, LA",1,1,1
+m10900,"Allentown-Bethlehem-Easton, PA-NJ",6,3,4
+m11020,"Altoona, PA",1,1,3
+m11100,"Amarillo, TX",1,1,1
+m11180,"Ames, IA",1,1,1
+m11300,"Anderson, IN",2,1,1
+m11340,"Anderson, SC",1,1,1
+m11460,"Ann Arbor, MI",1,1,1
+m11500,"Anniston-Oxford, AL",1,1,1
+m11540,"Appleton, WI",1,1,1
+m11700,"Asheville, NC",1,1,2
+m12020,"Athens-Clarke County, GA",1,1,1
+m12060,"Atlanta-Sandy Springs-Marietta, GA",9,7,9
+m12100,"Atlantic City, NJ",1,1,1
+m12220,"Auburn-Opelika, AL",1,1,1
+m12260,"Augusta-Richmond County, GA-SC",2,1,1
+m12420,"Austin-Round Rock, TX",2,2,2
+m12540,"Bakersfield, CA",4,2,3
+m12580,"Baltimore-Towson, MD",6,5,5
+m12620,"Bangor, ME",1,1,1
+m12700,"Barnstable Town, MA",2,3,4
+m12940,"Baton Rouge, LA",2,1,1
+m12980,"Battle Creek, MI",1,1,1
+m13020,"Bay City, MI",1,1,1
+m13140,"Beaumont-Port Arthur, TX",2,2,2
+m13380,"Bellingham, WA",1,1,1
+m13460,"Bend, OR",0,1,1
+m13740,"Billings, MT",1,1,1
+m13780,"Binghamton, NY",3,2,2
+m13820,"Birmingham-Hoover, AL",2,2,2
+m13900,"Bismarck, ND",1,1,1
+m13980,"Blacksburg-Christiansburg-Radford, VA",0,1,2
+m14020,"Bloomington, IN",1,1,1
+m14060,"Bloomington-Normal, IL",1,1,2
+m14260,"Boise City-Nampa, ID",1,2,2
+m14460,"Boston-Cambridge-Quincy, MA-NH",10,4,3
+m14500,"Boulder, CO",1,1,2
+m14540,"Bowling Green, KY",1,1,1
+m14740,"Bremerton-Silverdale, WA",3,2,2
+m14860,"Bridgeport-Stamford-Norwalk, CT",6,5,5
+m14980,"Bristol, VA",1,1,1
+m15180,"Brownsville-Harlingen, TX",3,3,3
+m15260,"Brunswick, GA",0,1,1
+m15380,"Buffalo-Niagara Falls, NY",4,5,10
+m15500,"Burlington, NC",1,1,1
+m15540,"Burlington-South Burlington, VT",1,1,1
+m15940,"Canton-Massillon, OH",2,1,1
+m15980,"Cape Coral-Fort Myers, FL",1,1,2
+m16180,"Carson City, NV",1,1,1
+m16220,"Casper, WY",1,1,1
+m16300,"Cedar Rapids, IA",1,1,1
+m16580,"Champaign-Urbana, IL",1,1,1
+m16620,"Charleston, WV",1,1,1
+m16700,"Charleston-North Charleston, SC",1,2,1
+m16740,"Charlotte-Gastonia-Concord, NC-SC",3,1,4
+m16820,"Charlottesville, VA",1,1,1
+m16860,"Chattanooga, TN-GA",2,1,2
+m16940,"Cheyenne, WY",1,1,2
+m16980,"Chicago-Naperville-Joliet, IL-IN-WI",18,12,8
+m17020,"Chico, CA",2,1,1
+m17140,"Cincinnati-Middletown, OH-KY-IN",3,4,4
+m17300,"Clarksville, TN-KY",3,3,2
+m17420,"Cleveland, TN",1,1,1
+m17460,"Cleveland-Elyria-Mentor, OH",3,9,9
+m17660,"Coeur d'Alene, ID",0,1,1
+m17780,"College Station-Bryan, TX",1,1,1
+m17820,"Colorado Springs, CO",1,2,1
+m17860,"Columbia, MO",1,1,1
+m17900,"Columbia, SC",1,1,1
+m17980,"Columbus, GA-AL",1,1,1
+m18020,"Columbus, IN",1,1,1
+m18140,"Columbus, OH",5,7,9
+m18580,"Corpus Christi, TX",2,2,2
+m18700,"Corvallis, OR",1,1,1
+m19060,"Cumberland, MD-WV",1,1,1
+m19100,"Dallas-Fort Worth-Arlington, TX",11,15,11
+m19140,"Dalton, GA",1,2,2
+m19180,"Danville, IL",1,1,1
+m19260,"Danville, VA",1,1,1
+m19340,"Davenport-Moline-Rock Island, IA-IL",2,2,2
+m19380,"Dayton, OH",3,2,1
+m19460,"Decatur, AL",1,1,1
+m19500,"Decatur, IL",1,1,1
+m19660,"Deltona-Daytona Beach-Ormond Beach, FL",5,3,3
+m19740,"Denver-Aurora, CO",4,6,6
+m19780,"Des Moines, IA",2,1,3
+m19820,"Detroit-Warren-Livonia, MI",18,27,35
+m20020,"Dothan, AL",1,1,1
+m20100,"Dover, DE",1,1,1
+m20220,"Dubuque, IA",1,1,1
+m20260,"Duluth, MN-WI",2,1,1
+m20500,"Durham, NC",2,2,2
+m20740,"Eau Claire, WI",1,1,1
+m20940,"El Centro, CA",0,1,1
+m21060,"Elizabethtown, KY",1,1,1
+m21140,"Elkhart-Goshen, IN",2,1,1
+m21300,"Elmira, NY",1,1,1
+m21340,"El Paso, TX",3,1,3
+m21500,"Erie, PA",2,2,2
+m21660,"Eugene-Springfield, OR",1,1,1
+m21780,"Evansville, IN-KY",1,1,1
+m22020,"Fargo, ND-MN",1,1,1
+m22140,"Farmington, NM",1,1,1
+m22180,"Fayetteville, NC",3,1,2
+m22220,"Fayetteville-Springdale-Rogers, AR-MO",2,1,3
+m22380,"Flagstaff, AZ",1,1,1
+m22420,"Flint, MI",1,2,3
+m22460,"Florence, AL",1,1,1
+m22500,"Florence, SC",1,1,1
+m22540,"Fond du Lac, WI",1,1,1
+m22660,"Fort Collins-Loveland, CO",1,1,2
+m22900,"Fort Smith, AR-OK",1,1,1
+m23020,"Fort Walton Beach-Crestview-Destin, FL",2,2,4
+m23060,"Fort Wayne, IN",1,1,1
+m23420,"Fresno, CA",1,2,2
+m23460,"Gadsden, AL",1,2,2
+m23540,"Gainesville, FL",1,1,2
+m23580,"Gainesville, GA",1,1,1
+m24020,"Glens Falls, NY",1,1,1
+m24140,"Goldsboro, NC",1,1,1
+m24220,"Grand Forks, ND-MN",1,1,1
+m24300,"Grand Junction, CO",1,1,1
+m24340,"Grand Rapids-Wyoming, MI",1,4,5
+m24500,"Great Falls, MT",1,1,1
+m24540,"Greeley, CO",1,1,1
+m24580,"Green Bay, WI",1,1,1
+m24660,"Greensboro-High Point, NC",5,2,2
+m24780,"Greenville, NC",2,1,1
+m24860,"Greenville, SC",2,2,2
+m25060,"Gulfport-Biloxi, MS",1,2,3
+m25180,"Hagerstown-Martinsburg, MD-WV",1,1,1
+m25260,"Hanford-Corcoran, CA",0,1,1
+m25420,"Harrisburg-Carlisle, PA",3,3,2
+m25500,"Harrisonburg, VA",1,1,1
+m25540,"Hartford-West Hartford-East Hartford, CT",3,7,6
+m25620,"Hattiesburg, MS",1,1,1
+m25860,"Hickory-Morganton-Lenoir, NC",1,1,1
+m25980,"Hinesville-Fort Stewart, GA",1,0,1
+m26100,"Holland-Grand Haven, MI",3,1,2
+m26300,"Hot Springs, AR",0,1,1
+m26380,"Houma-Bayou Cane-Thibodaux, LA",1,1,1
+m26420,"Houston-Baytown-Sugar Land, TX",10,8,9
+m26580,"Huntington-Ashland, WV-KY-OH",2,1,1
+m26620,"Huntsville, AL",1,1,1
+m26820,"Idaho Falls, ID",1,1,1
+m26900,"Indianapolis, IN",6,2,5
+m26980,"Iowa City, IA",1,1,1
+m27060,"Ithaca, NY",1,1,1
+m27100,"Jackson, MI",1,1,1
+m27140,"Jackson, MS",1,2,2
+m27180,"Jackson, TN",1,1,1
+m27260,"Jacksonville, FL",3,2,2
+m27340,"Jacksonville, NC",1,1,1
+m27500,"Janesville, WI",2,1,1
+m27620,"Jefferson City, MO",0,1,1
+m27740,"Johnson City, TN",1,1,1
+m27780,"Johnstown, PA",3,1,1
+m27860,"Jonesboro, AR",1,1,1
+m27900,"Joplin, MO",1,1,1
+m28020,"Kalamazoo-Portage, MI",1,1,1
+m28100,"Kankakee-Bradley, IL",1,1,1
+m28140,"Kansas City, MO-KS",5,5,8
+m28420,"Kennewick-Richland-Pasco, WA",2,2,1
+m28660,"Killeen-Temple-Fort Hood, TX",2,2,2
+m28700,"Kingsport-Bristol, TN-VA",1,1,2
+m28740,"Kingston, NY",2,1,1
+m28940,"Knoxville, TN",1,2,2
+m29020,"Kokomo, IN",1,1,1
+m29100,"La Crosse, WI-MN",1,1,1
+m29140,"Lafayette, IN",1,1,1
+m29180,"Lafayette, LA",1,1,1
+m29340,"Lake Charles, LA",1,1,1
+m29460,"Lakeland-Winter Haven, FL",2,2,3
+m29540,"Lancaster, PA",2,1,1
+m29620,"Lansing-East Lansing, MI",2,2,2
+m29700,"Laredo, TX",1,1,1
+m29740,"Las Cruces, NM",1,1,1
+m29820,"Las Vegas-Paradise, NV",1,3,5
+m29940,"Lawrence, KS",1,1,1
+m30020,"Lawton, OK",1,1,2
+m30140,"Lebanon, PA",0,1,1
+m30300,"Lewiston, ID-WA",0,0,0
+m30340,"Lewiston-Auburn, ME",1,1,1
+m30460,"Lexington-Fayette, KY",1,2,1
+m30620,"Lima, OH",2,1,1
+m30700,"Lincoln, NE",1,1,1
+m30780,"Little Rock-North Little Rock, AR",1,1,2
+m30860,"Logan, UT-ID",1,1,1
+m30980,"Longview, TX",1,1,1
+m31020,"Longview-Kelso, WA",1,1,1
+m31100,"Los Angeles-Long Beach-Santa Ana, CA",42,43,54
+m31140,"Louisville, KY-IN",5,3,2
+m31180,"Lubbock, TX",1,2,1
+m31340,"Lynchburg, VA",2,2,2
+m31420,"Macon, GA",1,1,1
+m31460,"Madera, CA",0,1,1
+m31540,"Madison, WI",1,1,1
+m31700,"Manchester-Nashua, NH",2,2,2
+m31900,"Mansfield, OH",1,1,1
+m32580,"McAllen-Edinburg-Pharr, TX",2,1,1
+m32780,"Medford, OR",1,3,2
+m32820,"Memphis, TN-MS-AR",3,4,1
+m32900,"Merced, CA",1,1,1
+m33100,"Miami-Fort Lauderdale-Miami Beach, FL",8,14,9
+m33140,"Michigan City-La Porte, IN",1,1,0
+m33260,"Midland, TX",1,1,1
+m33340,"Milwaukee-Waukesha-West Allis, WI",3,7,6
+m33460,"Minneapolis-St. Paul-Bloomington, MN-WI",8,5,6
+m33540,"Missoula, MT",1,1,1
+m33660,"Mobile, AL",2,1,1
+m33700,"Modesto, CA",1,2,4
+m33740,"Monroe, LA",1,1,1
+m33780,"Monroe, MI",2,1,1
+m33860,"Montgomery, AL",1,1,1
+m34060,"Morgantown, WV",0,1,1
+m34100,"Morristown, TN",0,1,1
+m34580,"Mount Vernon-Anacortes, WA",0,1,1
+m34620,"Muncie, IN",1,2,2
+m34740,"Muskegon-Norton Shores, MI",1,1,1
+m34820,"Myrtle Beach-Conway-North Myrtle Beach, SC",0,1,1
+m34900,"Napa, CA",1,1,1
+m34940,"Naples-Marco Island, FL",1,2,1
+m34980,"Nashville-Davidson--Murfreesboro, TN",4,3,4
+m35300,"New Haven-Milford, CT",4,2,3
+m35380,"New Orleans-Metairie-Kenner, LA",9,7,7
+m35620,"New York-Northern New Jersey-Long Island, NY-NJ-PA",28,25,23
+m35660,"Niles-Benton Harbor, MI",3,4,4
+m35980,"Norwich-New London, CT",3,2,3
+m36100,"Ocala, FL",1,1,1
+m36140,"Ocean City, NJ",1,2,2
+m36220,"Odessa, TX",1,1,1
+m36260,"Ogden-Clearfield, UT",2,1,3
+m36420,"Oklahoma City, OK",4,6,3
+m36500,"Olympia, WA",1,1,3
+m36540,"Omaha-Council Bluffs, NE-IA",2,4,8
+m36740,"Orlando, FL",2,6,5
+m36780,"Oshkosh-Neenah, WI",1,1,1
+m36980,"Owensboro, KY",1,1,1
+m37100,"Oxnard-Thousand Oaks-Ventura, CA",2,7,6
+m37340,"Palm Bay-Melbourne-Titusville, FL",5,3,4
+m37460,"Panama City-Lynn Haven, FL",1,1,1
+m37620,"Parkersburg-Marietta, WV-OH",2,1,2
+m37700,"Pascagoula, MS",1,1,2
+m37860,"Pensacola-Ferry Pass-Brent, FL",2,2,2
+m37900,"Peoria, IL",2,1,1
+m37980,"Philadelphia-Camden-Wilmington, PA-NJ-DE-MD",23,14,9
+m38060,"Phoenix-Mesa-Scottsdale, AZ",12,12,14
+m38220,"Pine Bluff, AR",1,1,1
+m38300,"Pittsburgh, PA",10,9,11
+m38340,"Pittsfield, MA",1,1,1
+m38540,"Pocatello, ID",1,1,1
+m38860,"Portland-South Portland, ME",1,1,1
+m38900,"Portland-Vancouver-Beaverton, OR-WA",2,3,7
+m38940,"Port St. Lucie-Fort Pierce, FL",2,2,3
+m39100,"Poughkeepsie-Newburgh-Middletown, NY",3,4,5
+m39140,"Prescott, AZ",1,1,2
+m39300,"Providence-New Bedford-Fall River, RI-MA",11,11,8
+m39340,"Provo-Orem, UT",1,1,2
+m39380,"Pueblo, CO",3,1,2
+m39460,"Punta Gorda, FL",2,1,1
+m39540,"Racine, WI",1,1,4
+m39580,"Raleigh-Cary, NC",1,1,2
+m39660,"Rapid City, SD",1,2,1
+m39740,"Reading, PA",1,1,3
+m39820,"Redding, CA",1,1,1
+m39900,"Reno-Sparks, NV",1,1,1
+m40060,"Richmond, VA",1,3,3
+m40140,"Riverside-San Bernardino-Ontario, CA",8,16,24
+m40220,"Roanoke, VA",1,1,1
+m40340,"Rochester, MN",1,1,1
+m40380,"Rochester, NY",3,3,2
+m40420,"Rockford, IL",1,2,2
+m40580,"Rocky Mount, NC",0,1,1
+m40660,"Rome, GA",1,1,1
+m40900,"Sacramento--Arden-Arcade--Roseville, CA",2,3,5
+m40980,"Saginaw-Saginaw Township North, MI",1,1,1
+m41060,"St. Cloud, MN",1,1,1
+m41100,"St. George, UT",1,1,1
+m41140,"St. Joseph, MO-KS",2,1,1
+m41180,"St. Louis, MO-IL",9,5,7
+m41420,"Salem, OR",1,2,2
+m41500,"Salinas, CA",3,3,4
+m41540,"Salisbury, MD",0,1,1
+m41620,"Salt Lake City, UT",2,3,1
+m41660,"San Angelo, TX",1,1,2
+m41700,"San Antonio, TX",6,3,4
+m41740,"San Diego-Carlsbad-San Marcos, CA",9,10,12
+m41780,"Sandusky, OH",0,2,1
+m41860,"San Francisco-Oakland-Fremont, CA",3,2,3
+m41940,"San Jose-Sunnyvale-Santa Clara, CA",4,6,7
+m42020,"San Luis Obispo-Paso Robles, CA",1,1,2
+m42060,"Santa Barbara-Santa Maria-Goleta, CA",1,1,1
+m42100,"Santa Cruz-Watsonville, CA",2,1,2
+m42140,"Santa Fe, NM",1,1,1
+m42220,"Santa Rosa-Petaluma, CA",1,3,2
+m42260,"Sarasota-Bradenton-Venice, FL",3,3,3
+m42340,"Savannah, GA",2,1,1
+m42540,"Scranton--Wilkes-Barre, PA",2,3,3
+m42660,"Seattle-Tacoma-Bellevue, WA",5,7,8
+m43100,"Sheboygan, WI",1,1,2
+m43300,"Sherman-Denison, TX",1,1,0
+m43340,"Shreveport-Bossier City, LA",1,1,1
+m43580,"Sioux City, IA-NE-SD",1,1,1
+m43620,"Sioux Falls, SD",2,1,1
+m43780,"South Bend-Mishawaka, IN-MI",1,1,1
+m43900,"Spartanburg, SC",1,1,2
+m44060,"Spokane, WA",1,2,2
+m44100,"Springfield, IL",1,1,1
+m44140,"Springfield, MA",2,3,3
+m44180,"Springfield, MO",1,1,1
+m44220,"Springfield, OH",1,1,1
+m44300,"State College, PA",1,1,1
+m44700,"Stockton, CA",2,3,3
+m44940,"Sumter, SC",0,1,2
+m45060,"Syracuse, NY",2,1,1
+m45220,"Tallahassee, FL",1,1,1
+m45300,"Tampa-St. Petersburg-Clearwater, FL",14,11,18
+m45460,"Terre Haute, IN",2,1,1
+m45500,"Texarkana, TX-Texarkana, AR",1,1,1
+m45780,"Toledo, OH",5,4,5
+m45820,"Topeka, KS",2,2,1
+m45940,"Trenton-Ewing, NJ",1,1,1
+m46060,"Tucson, AZ",3,2,1
+m46140,"Tulsa, OK",4,1,1
+m46220,"Tuscaloosa, AL",1,1,1
+m46340,"Tyler, TX",1,1,1
+m46540,"Utica-Rome, NY",2,1,1
+m46660,"Valdosta, GA",1,1,1
+m46700,"Vallejo-Fairfield, CA",4,3,4
+m46940,"Vero Beach, FL",1,1,1
+m47020,"Victoria, TX",1,1,1
+m47220,"Vineland-Millville-Bridgeton, NJ",2,1,0
+m47260,"Virginia Beach-Norfolk-Newport News, VA-NC",5,10,8
+m47300,"Visalia-Porterville, CA",2,2,2
+m47380,"Waco, TX",1,1,1
+m47580,"Warner Robins, GA",1,1,1
+m47900,"Washington-Arlington-Alexandria, DC-VA-MD-WV",7,6,13
+m47940,"Waterloo-Cedar Falls, IA",1,3,3
+m48140,"Wausau, WI",1,1,1
+m48260,"Weirton-Steubenville, WV-OH",3,3,3
+m48300,"Wenatchee, WA",1,1,1
+m48540,"Wheeling, WV-OH",1,1,1
+m48620,"Wichita, KS",1,2,2
+m48660,"Wichita Falls, TX",2,3,3
+m48700,"Williamsport, PA",1,1,1
+m48900,"Wilmington, NC",1,1,1
+m49020,"Winchester, VA-WV",2,1,1
+m49180,"Winston-Salem, NC",1,1,1
+m49340,"Worcester, MA",2,1,1
+m49420,"Yakima, WA",1,2,2
+m49620,"York-Hanover, PA",1,2,3
+m49660,"Youngstown-Warren-Boardman, OH-PA",2,2,4
+m49700,"Yuba City-Marysville, CA",1,1,1
+m49740,"Yuma, AZ",1,1,1
