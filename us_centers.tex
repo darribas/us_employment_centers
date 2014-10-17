@@ -1,0 +1,920 @@
+
+% Default to the notebook output style
+
+    
+
+
+% Inherit from the specified cell style.
+
+
+
+
+    
+\documentclass{article}
+
+    
+    
+    \usepackage{graphicx} % Used to insert images
+    \usepackage{adjustbox} % Used to constrain images to a maximum size 
+    \usepackage{color} % Allow colors to be defined
+    \usepackage{enumerate} % Needed for markdown enumerations to work
+    \usepackage{geometry} % Used to adjust the document margins
+    \usepackage{amsmath} % Equations
+    \usepackage{amssymb} % Equations
+    \usepackage[mathletters]{ucs} % Extended unicode (utf-8) support
+    \usepackage[utf8x]{inputenc} % Allow utf-8 characters in the tex document
+    \usepackage{fancyvrb} % verbatim replacement that allows latex
+    \usepackage{grffile} % extends the file name processing of package graphics 
+                         % to support a larger range 
+    % The hyperref package gives us a pdf with properly built
+    % internal navigation ('pdf bookmarks' for the table of contents,
+    % internal cross-reference links, web links for URLs, etc.)
+    \usepackage{hyperref}
+    \usepackage{longtable} % longtable support required by pandoc >1.10
+    \usepackage{booktabs}  % table support for pandoc > 1.12.2
+    
+
+    
+    
+    \definecolor{orange}{cmyk}{0,0.4,0.8,0.2}
+    \definecolor{darkorange}{rgb}{.71,0.21,0.01}
+    \definecolor{darkgreen}{rgb}{.12,.54,.11}
+    \definecolor{myteal}{rgb}{.26, .44, .56}
+    \definecolor{gray}{gray}{0.45}
+    \definecolor{lightgray}{gray}{.95}
+    \definecolor{mediumgray}{gray}{.8}
+    \definecolor{inputbackground}{rgb}{.95, .95, .85}
+    \definecolor{outputbackground}{rgb}{.95, .95, .95}
+    \definecolor{traceback}{rgb}{1, .95, .95}
+    % ansi colors
+    \definecolor{red}{rgb}{.6,0,0}
+    \definecolor{green}{rgb}{0,.65,0}
+    \definecolor{brown}{rgb}{0.6,0.6,0}
+    \definecolor{blue}{rgb}{0,.145,.698}
+    \definecolor{purple}{rgb}{.698,.145,.698}
+    \definecolor{cyan}{rgb}{0,.698,.698}
+    \definecolor{lightgray}{gray}{0.5}
+    
+    % bright ansi colors
+    \definecolor{darkgray}{gray}{0.25}
+    \definecolor{lightred}{rgb}{1.0,0.39,0.28}
+    \definecolor{lightgreen}{rgb}{0.48,0.99,0.0}
+    \definecolor{lightblue}{rgb}{0.53,0.81,0.92}
+    \definecolor{lightpurple}{rgb}{0.87,0.63,0.87}
+    \definecolor{lightcyan}{rgb}{0.5,1.0,0.83}
+    
+    % commands and environments needed by pandoc snippets
+    % extracted from the output of `pandoc -s`
+    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+    % Add ',fontsize=\small' for more characters per line
+    \newenvironment{Shaded}{}{}
+    \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+    \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+    \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+    \newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+    \newcommand{\RegionMarkerTok}[1]{{#1}}
+    \newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\NormalTok}[1]{{#1}}
+    
+    % Define a nice break command that doesn't care if a line doesn't already
+    % exist.
+    \def\br{\hspace*{\fill} \\* }
+    % Math Jax compatability definitions
+    \def\gt{>}
+    \def\lt{<}
+    % Document parameters
+    \title{\textit{"The Validity of the Monocentric City Model in a Polycentric Age"}
+    \\
+    US Metropolitan Areas in 1990, 2000 and 2010}
+    
+    
+    
+
+    % Pygments definitions
+    
+\makeatletter
+\def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
+    \let\PY@ul=\relax \let\PY@tc=\relax%
+    \let\PY@bc=\relax \let\PY@ff=\relax}
+\def\PY@tok#1{\csname PY@tok@#1\endcsname}
+\def\PY@toks#1+{\ifx\relax#1\empty\else%
+    \PY@tok{#1}\expandafter\PY@toks\fi}
+\def\PY@do#1{\PY@bc{\PY@tc{\PY@ul{%
+    \PY@it{\PY@bf{\PY@ff{#1}}}}}}}
+\def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
+
+\expandafter\def\csname PY@tok@gd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gu\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
+\expandafter\def\csname PY@tok@gs\endcsname{\let\PY@bf=\textbf}
+\expandafter\def\csname PY@tok@gr\endcsname{\def\PY@tc##1{\textcolor[rgb]{1.00,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@cm\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@vg\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@m\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@go\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.53,0.53}{##1}}}
+\expandafter\def\csname PY@tok@ge\endcsname{\let\PY@it=\textit}
+\expandafter\def\csname PY@tok@vc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@il\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@cs\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.74,0.48,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gh\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@ni\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.60,0.60,0.60}{##1}}}
+\expandafter\def\csname PY@tok@nl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@no\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@na\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.49,0.56,0.16}{##1}}}
+\expandafter\def\csname PY@tok@nb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@ne\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.82,0.25,0.23}{##1}}}
+\expandafter\def\csname PY@tok@nf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@si\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@s2\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@vi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@nt\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nv\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@s1\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sx\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@bp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@c1\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@kc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@c\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@mf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@err\endcsname{\def\PY@bc##1{\setlength{\fboxsep}{0pt}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}
+\expandafter\def\csname PY@tok@kd\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ss\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sr\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@mo\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@kn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@mi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@gp\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@o\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@kr\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@s\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@kp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@w\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\expandafter\def\csname PY@tok@kt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
+\expandafter\def\csname PY@tok@ow\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@sb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@k\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@se\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sd\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+
+\def\PYZbs{\char`\\}
+\def\PYZus{\char`\_}
+\def\PYZob{\char`\{}
+\def\PYZcb{\char`\}}
+\def\PYZca{\char`\^}
+\def\PYZam{\char`\&}
+\def\PYZlt{\char`\<}
+\def\PYZgt{\char`\>}
+\def\PYZsh{\char`\#}
+\def\PYZpc{\char`\%}
+\def\PYZdl{\char`\$}
+\def\PYZhy{\char`\-}
+\def\PYZsq{\char`\'}
+\def\PYZdq{\char`\"}
+\def\PYZti{\char`\~}
+% for compatibility with earlier versions
+\def\PYZat{@}
+\def\PYZlb{[}
+\def\PYZrb{]}
+\makeatother
+
+
+    % Exact colors from NB
+    \definecolor{incolor}{rgb}{0.0, 0.0, 0.5}
+    \definecolor{outcolor}{rgb}{0.545, 0.0, 0.0}
+
+
+
+    
+    % Prevent overflowing lines due to hard-to-break entities
+    \sloppy 
+    % Setup hyperref package
+    \hypersetup{
+      breaklinks=true,  % so long urls are correctly broken across lines
+      colorlinks=true,
+      urlcolor=blue,
+      linkcolor=darkorange,
+      citecolor=darkgreen,
+      }
+    % Slightly bigger margins than the latex defaults
+    
+    \geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+    
+    
+
+    \author{\href{http://darribas.org}{Dani Arribas-Bel} and Fernando
+    Sanz-Gracia}
+
+
+    \begin{document}
+    
+    
+    \maketitle
+    
+    
+
+    
+
+    \section{Code Notebook}
+
+
+
+
+    This document presents the code and steps neccesary to reproduce the
+results in the paper \emph{``The Validity of the Monocentric City Model
+in a Polycentric Age: US Metropolitan Areas in 1990, 2000 and 2010''},
+by Dani Arribas-Bel and Fernando Sanz-Gracia, forthcoming in the journal
+Urban Geography. If you want to cite the paper or use any of the code
+and/or results in it, please use the following citation:
+
+
+\begin{verbatim}
+@article{arribasbel_sanzgracia_centersUS,
+        author = "Arribas-Bel, Daniel and Sanz-Gracia, Fernando",
+        journal = "Urban Geography",
+        title = "{The Validity of the Monocentric City Model in a Polycentric Age: 
+                US Metropolitan Areas in 1990, 2000 and 2010}",
+        year = "2014",
+        volume = "",
+        pages = {}
+}
+\end{verbatim}
+                
+
+    \subsection{Access and software requirements}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}43}]:} \PY{o}{\PYZpc{}}\PY{k}{matplotlib} \PY{n}{inline}
+         \PY{k+kn}{import} \PY{n+nn}{os}
+         \PY{k+kn}{import} \PY{n+nn}{pandas} \PY{k+kn}{as} \PY{n+nn}{pd}
+         \PY{k+kn}{import} \PY{n+nn}{employment\PYZus{}centers\PYZus{}tools} \PY{k+kn}{as} \PY{n+nn}{tools}
+\end{Verbatim}
+
+
+    \subsection{Data}
+
+
+    Employment data for 1990 and 2000 comes from the
+\href{http://www.census.gov/mp/www/cat/decennial_census_2000/census_2000_special_tabulation_census_tract_of_work_by_census_tract_of_residence_stp_64.html}{``Census
+2000 Special Tabulation Product 64''} (\texttt{stp64}), which offers
+tract- to-tract commuting flows for the whole country. We consider only
+tracts within boundaries of the MSAs studied and sum over inflows to
+obtain employment numbers at the tract level. For 2010, there is no
+\texttt{stp64} so we use the
+\href{http://ctpp.transportation.org/Pages/5-Year-Info.aspx}{Census
+Transportation Planning Products} (CTPP) 5-year small area data, which
+is based on ACS 2006-2010 Census Data and provides employment counts at
+the tract level for 2010.
+
+Since it is not clear to the authors whether it is legal to redistribute
+original Census data (particularly when the \texttt{stp64} is not
+available as a free download), \textbf{the raw dataset used for this
+paper is not included}. However, in order to illustrate how the process
+was carried out, below we show the structure of the data and how that is
+entered into the code to identify employment centers. This should allow
+users who have accessed the original data from the Census to replicate
+our results. We do provide the output of the center identification in
+the form of shapefiles (one per MSA per year). These can be found in the
+repository where this notebook and other code is hosted.
+
+    We store employment data in \texttt{csv} files, using a separate one for
+each MSA for each year. The raw format of these files is as follows,
+where the top of the file for MSA 10180 in 1990 is shown:
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}14}]:} \PY{o}{!}head /Users/dani/AAA/LargeData/T\PYZhy{}CentersData/attributes/3\PYZhy{}empDen/empDen1990/10180.csv
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+gisjoin2,emp,area,dens,densEB
+48044100102,2855.0,45088315.8862,6.33201738385e-05,6.32174061116e-05
+48044100105,357.0,16138974.527,2.212036455e-05,2.20337682175e-05
+48044100104,272.0,18017057.8625,1.5096804488e-05,1.56769988243e-05
+48044100107,565.0,18156353.5203,3.11185833305e-05,3.18837079257e-05
+48044100108,1484.0,25713732.5898,5.77123525267e-05,5.73154004704e-05
+48044100106,342.0,25402742.4933,1.34631132875e-05,1.35600665231e-05
+48044100110,1095.0,12176093.1624,8.99303237414e-05,8.84590480255e-05
+48044100112,1339.0,20690727.6527,6.47149787323e-05,6.86296980824e-05
+48044100113,2364.0,30324316.5093,7.79572393421e-05,7.73806762075e-05
+    \end{Verbatim}
+
+    These files can be loaded and combined for 1990 in one
+\texttt{DataFrame} with the following code:
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}8}]:} \PY{n}{empF90} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{/Users/dani/AAA/LargeData/T\PYZhy{}CentersData/attributes/3\PYZhy{}empDen/empDen1990/}\PY{l+s}{\PYZsq{}}
+        \PY{n}{emp90} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{concat}\PY{p}{(}\PY{p}{[}\PY{n}{tools}\PY{o}{.}\PY{n}{load\PYZus{}msa\PYZus{}data}\PY{p}{(}\PY{n}{empF90}\PY{o}{+}\PY{n}{f}\PY{p}{,} \PY{n}{y90}\PY{o}{=}\PY{n+nb+bp}{True}\PY{p}{)} \PY{k}{for} \PY{n}{f} \PY{o+ow}{in} \PY{n}{os}\PY{o}{.}\PY{n}{listdir}\PY{p}{(}\PY{n}{empF90}\PY{p}{)}\PY{p}{]}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}16}]:} \PY{n}{emp90}\PY{o}{.}\PY{n}{info}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+<class 'pandas.core.frame.DataFrame'>
+Index: 54994 entries, G48044100102 to G04001900049
+Data columns (total 3 columns):
+emp           54994 non-null float64
+Shape\_area    54994 non-null float64
+msa           54994 non-null object
+dtypes: float64(2), object(1)
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}12}]:} \PY{n}{emp90}\PY{o}{.}\PY{n}{head}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}12}]:}                emp  Shape\_area     msa
+         gisjoin2                              
+         G48044100102  2855    4.188840  m10180
+         G48044100105   357    1.499359  m10180
+         G48044100104   272    1.673839  m10180
+         G48044100107   565    1.686780  m10180
+         G48044100108  1484    2.388883  m10180
+\end{Verbatim}
+        
+    Similar steps can be taken for 2000:
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}9}]:} \PY{n}{empF00} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{/Users/dani/AAA/LargeData/T\PYZhy{}CentersData/attributes/3\PYZhy{}empDen/empDen2000/}\PY{l+s}{\PYZsq{}}
+        \PY{n}{emp00} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{concat}\PY{p}{(}\PY{p}{[}\PY{n}{tools}\PY{o}{.}\PY{n}{load\PYZus{}msa\PYZus{}data}\PY{p}{(}\PY{n}{empF00}\PY{o}{+}\PY{n}{f}\PY{p}{)} \PY{k}{for} \PY{n}{f} \PY{o+ow}{in} \PY{n}{os}\PY{o}{.}\PY{n}{listdir}\PY{p}{(}\PY{n}{empF00}\PY{p}{)}\PY{p}{]}\PY{p}{)}
+\end{Verbatim}
+
+    Steps for 2010 are slightly different as the data are collected from a
+different source. We begin with a \texttt{csv} that looks as follows:
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}25}]:} \PY{o}{!}head /Users/dani/AAA/LargeData/ctpp/data2010/tractPOW\PYZus{}all.csv
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+head: /Users/dani/AAA/LargeData/ctpp/data2010/tractPOW\_all.csv: No such file or directory
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}6}]:} \PY{n}{emp10\PYZus{}link} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{/Users/dani/AAA/LargeData/ctpp/data2010/tractPOW\PYZus{}all.csv}\PY{l+s}{\PYZsq{}}
+        \PY{n}{shp\PYZus{}link} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{/Users/dani/AAA/LargeData/nhgis/shapeFiles/nhgis0019\PYZus{}shapefile\PYZus{}tl2010\PYZus{}us\PYZus{}tract\PYZus{}2010/US\PYZus{}tract\PYZus{}2010.shp}\PY{l+s}{\PYZsq{}}
+        \PY{n}{cty2msa} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{read\PYZus{}csv}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{cty2msa.csv}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{names}\PY{o}{=}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{cty}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{msa}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{index\PYZus{}col}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{squeeze}\PY{o}{=}\PY{n+nb+bp}{True}\PY{p}{)}
+        \PY{n}{shpW\PYZus{}out} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{/Users/dani/AAA/LargeData/nhgis/shapeFiles/nhgis0019\PYZus{}shapefile\PYZus{}tl2010\PYZus{}us\PYZus{}tract\PYZus{}2010/msa\PYZus{}shapes\PYZus{}ws/}\PY{l+s}{\PYZsq{}}
+        \PY{n}{emp10} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{read\PYZus{}csv}\PY{p}{(}\PY{n}{emp10\PYZus{}link}\PY{p}{)}\PY{p}{[}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{GISJOIN}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{emp}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Shape\PYZus{}area}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{]}
+        \PY{n}{emp10}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Shape\PYZus{}area}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{emp10}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Shape\PYZus{}area}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{*} \PY{l+m+mf}{0.000001} \PY{c}{\PYZsh{}Area in Km2}
+        \PY{n}{emp10}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{msa}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{emp10}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{GISJOIN}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{apply}\PY{p}{(}\PY{k}{lambda} \PY{n}{x}\PY{p}{:} \PYZbs{}
+                \PY{n}{tools}\PY{o}{.}\PY{n}{msafy}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{c}\PY{l+s}{\PYZsq{}}\PY{o}{+}\PY{n}{x}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{:}\PY{l+m+mi}{3}\PY{p}{]}\PY{o}{+}\PY{n}{x}\PY{p}{[}\PY{l+m+mi}{4}\PY{p}{:}\PY{l+m+mi}{7}\PY{p}{]}\PY{p}{,} \PY{n}{cty2msa}\PY{p}{)}\PY{p}{)}
+        \PY{n}{emp10} \PY{o}{=} \PY{n}{emp10}\PY{o}{.}\PY{n}{dropna}\PY{p}{(}\PY{p}{)} \PY{c}{\PYZsh{} Only tracts in MSA \PYZam{}\PYZam{} w/ employment}
+\end{Verbatim}
+
+    Once all the data are loaded, it is very straightforward to replicate
+Table 1 in the paper:
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}10}]:} \PY{n}{table} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{p}{)}
+         \PY{k}{for} \PY{n}{year}\PY{p}{,} \PY{n}{emp} \PY{o+ow}{in} \PY{p}{[}\PY{p}{(}\PY{l+m+mi}{1990}\PY{p}{,} \PY{n}{emp90}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+m+mi}{2000}\PY{p}{,} \PY{n}{emp00}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+m+mi}{2010}\PY{p}{,} \PY{n}{emp10}\PY{p}{)}\PY{p}{]}\PY{p}{:}
+             \PY{n}{minTpMSA} \PY{o}{=} \PY{n}{emp}\PY{o}{.}\PY{n}{groupby}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{msa}\PY{l+s}{\PYZsq{}}\PY{p}{)}\PY{o}{.}\PY{n}{count}\PY{p}{(}\PY{p}{)}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{emp}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{min}\PY{p}{(}\PY{p}{)}
+             \PY{n}{maxTpMSA} \PY{o}{=} \PY{n}{emp}\PY{o}{.}\PY{n}{groupby}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{msa}\PY{l+s}{\PYZsq{}}\PY{p}{)}\PY{o}{.}\PY{n}{count}\PY{p}{(}\PY{p}{)}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{emp}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{max}\PY{p}{(}\PY{p}{)}
+             \PY{n}{meanTpMSA} \PY{o}{=} \PY{n}{emp}\PY{o}{.}\PY{n}{groupby}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{msa}\PY{l+s}{\PYZsq{}}\PY{p}{)}\PY{o}{.}\PY{n}{count}\PY{p}{(}\PY{p}{)}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{emp}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{p}{)}
+             \PY{n}{summary} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{Series}\PY{p}{(}\PY{p}{\PYZob{}}\PY{l+s}{\PYZsq{}}\PY{l+s}{N. MSAs}\PY{l+s}{\PYZsq{}}\PY{p}{:} \PY{n+nb}{len}\PY{p}{(}\PY{n}{emp}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{msa}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{unique}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{p}{,} \PYZbs{}
+                                   \PY{l+s}{\PYZsq{}}\PY{l+s}{N. Tracts}\PY{l+s}{\PYZsq{}}\PY{p}{:} \PY{n+nb}{len}\PY{p}{(}\PY{n}{emp}\PY{p}{)}\PY{p}{,} \PYZbs{}
+                                   \PY{l+s}{\PYZsq{}}\PY{l+s}{Min. N. Tracts/MSA}\PY{l+s}{\PYZsq{}}\PY{p}{:} \PY{n}{minTpMSA}\PY{p}{,} \PYZbs{}
+                                   \PY{l+s}{\PYZsq{}}\PY{l+s}{Max. N. Tracts/MSA}\PY{l+s}{\PYZsq{}}\PY{p}{:} \PY{n}{maxTpMSA}\PY{p}{,} \PYZbs{}
+                                   \PY{l+s}{\PYZsq{}}\PY{l+s}{Average. N. Tracts/MSA}\PY{l+s}{\PYZsq{}}\PY{p}{:} \PY{n}{meanTpMSA}\PY{p}{\PYZcb{}}\PY{p}{)}
+             \PY{n}{table}\PY{p}{[}\PY{n}{year}\PY{p}{]} \PY{o}{=} \PY{n}{summary}
+         \PY{n}{table}\PY{o}{.}\PY{n}{reindex}\PY{p}{(}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{N. MSAs}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{N. Tracts}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Min. N. Tracts/MSA}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PYZbs{}
+                        \PY{l+s}{\PYZsq{}}\PY{l+s}{Max. N. Tracts/MSA}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Average. N. Tracts/MSA}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}10}]:}                                1990          2000          2010
+         N. MSAs                   359.00000    359.000000    359.000000
+         N. Tracts               54994.00000  52329.000000  58808.000000
+         Min. N. Tracts/MSA         17.00000     10.000000     13.000000
+         Max. N. Tracts/MSA       4565.00000   4493.000000   4510.000000
+         Average. N. Tracts/MSA    153.18663    145.763231    163.810585
+\end{Verbatim}
+        
+
+    \subsection{Center identification}
+
+
+    We use the data we have just loaded and combine them with geographical
+data to derive spatial relationships (these are needed to run the main
+identification algorithm). We use shapefiles of the tracts for each year
+downloaded from \href{http://nhgis.org}{NHGIS} and projected to state
+plane so areas can be calculated (not included in the repository either
+for similar redistribution reasons as with employment data).
+
+Since the data are not shipped in the repository, the code below will
+only run if you provide it separately. This implies you need to point
+\texttt{cent\_inYY} (replace \texttt{YY} by the year) to the folder
+where you have separate files for each MSA. Once you run the code below,
+shapefiles and \texttt{.gal} files will be created in the
+\texttt{cent\_outYY} directory.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}11}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k+kn}{as} \PY{n+nn}{np}
+         \PY{k+kn}{import} \PY{n+nn}{multiprocessing} \PY{k+kn}{as} \PY{n+nn}{mp}
+         \PY{c}{\PYZsh{}pool = mp.Pool(mp.cpu\PYZus{}count())}
+         \PY{n}{seed} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{seed}\PY{p}{(}\PY{l+m+mi}{1234}\PY{p}{)}
+\end{Verbatim}
+
+    For 1990, this would identify the centers (make sure to modify
+\texttt{cent\_in90} and \texttt{cent\_out90} to fit your setup):
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}}]:} \PY{n}{cent\PYZus{}in90} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{/Users/dani/AAA/LargeData/T\PYZhy{}CentersData/shapes/msaTracts1990polygonsSP/}\PY{l+s}{\PYZsq{}}
+       \PY{n}{cent\PYZus{}out90} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{/Users/dani/Desktop/test90/}\PY{l+s}{\PYZsq{}}
+       
+       \PY{n}{emp90}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{dens\PYZus{}raw}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{p}{(}\PY{n}{emp90}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{emp}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{*} \PY{l+m+mf}{1.}\PY{p}{)} \PY{o}{/} \PY{n}{emp90}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Shape\PYZus{}area}\PY{l+s}{\PYZsq{}}\PY{p}{]}
+       \PY{n}{emp90}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{GISJOIN}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{emp90}\PY{o}{.}\PY{n}{index}
+       \PY{n}{pars} \PY{o}{=} \PY{p}{[}\PY{p}{(}\PY{n}{emp90}\PY{p}{[}\PY{n}{emp90}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{msa}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{==}\PY{n}{msa}\PY{p}{]}\PY{p}{,} \PY{n}{cent\PYZus{}in90}\PY{o}{+}\PY{n}{msa}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{:}\PY{p}{]}\PY{o}{+}\PY{l+s}{\PYZsq{}}\PY{l+s}{.shp}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{cent\PYZus{}out90}\PY{p}{)} \PYZbs{}
+               \PY{k}{for} \PY{n}{msa} \PY{o+ow}{in} \PY{n}{emp90}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{msa}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{unique}\PY{p}{(}\PY{p}{)}\PY{p}{]}
+       
+       \PY{n}{out} \PY{o}{=} \PY{n}{pool}\PY{o}{.}\PY{n}{map}\PY{p}{(}\PY{n}{tools}\PY{o}{.}\PY{n}{act\PYZus{}on\PYZus{}msa}\PY{p}{,} \PY{n}{pars}\PY{p}{[}\PY{p}{:}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{)}
+\end{Verbatim}
+
+    For 2000, this would identify the centers (make sure to modify
+\texttt{cent\_in00} and \texttt{cent\_out00} to fit your setup):
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}}]:} \PY{n}{cent\PYZus{}in00} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{/Users/dani/AAA/LargeData/T\PYZhy{}CentersData/shapes/msaTracts2000polygonsSP/}\PY{l+s}{\PYZsq{}}
+       \PY{n}{cent\PYZus{}out00} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{/Users/dani/Desktop/test00/}\PY{l+s}{\PYZsq{}}
+       
+       \PY{n}{emp00}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{dens\PYZus{}raw}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{p}{(}\PY{n}{emp00}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{emp}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{*} \PY{l+m+mf}{1.}\PY{p}{)} \PY{o}{/} \PY{n}{emp00}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Shape\PYZus{}area}\PY{l+s}{\PYZsq{}}\PY{p}{]}
+       \PY{n}{emp00}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{GISJOIN}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{emp00}\PY{o}{.}\PY{n}{index}
+       \PY{n}{pars} \PY{o}{=} \PY{p}{[}\PY{p}{(}\PY{n}{emp00}\PY{p}{[}\PY{n}{emp00}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{msa}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{==}\PY{n}{msa}\PY{p}{]}\PY{p}{,} \PY{n}{cent\PYZus{}in00}\PY{o}{+}\PY{n}{msa}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{:}\PY{p}{]}\PY{o}{+}\PY{l+s}{\PYZsq{}}\PY{l+s}{.shp}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{cent\PYZus{}out00}\PY{p}{)} \PYZbs{}
+               \PY{k}{for} \PY{n}{msa} \PY{o+ow}{in} \PY{n}{emp00}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{msa}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{unique}\PY{p}{(}\PY{p}{)}\PY{p}{]}
+       
+       \PY{n}{out} \PY{o}{=} \PY{n}{pool}\PY{o}{.}\PY{n}{map}\PY{p}{(}\PY{n}{tools}\PY{o}{.}\PY{n}{act\PYZus{}on\PYZus{}msa}\PY{p}{,} \PY{n}{pars}\PY{p}{[}\PY{p}{:}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{)}
+\end{Verbatim}
+
+    For 2010, this would identify the centers (make sure to modify
+\texttt{cent\_in10} and \texttt{cent\_out10} to fit your setup). Note
+that in this case, the way the shapefile is passed is slightly different
+because we are using 2010 data that we have sourced differently.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}}]:} \PY{n}{cent\PYZus{}out10} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{/Users/dani/Desktop/test10/}\PY{l+s}{\PYZsq{}}
+       \PY{n}{shp\PYZus{}link} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{/Users/dani/AAA/LargeData/nhgis/shapeFiles/nhgis0019\PYZus{}shapefile\PYZus{}tl2010\PYZus{}us\PYZus{}tract\PYZus{}2010/US\PYZus{}tract\PYZus{}2010.shp}\PY{l+s}{\PYZsq{}}
+       
+       \PY{n}{emp10}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{dens\PYZus{}raw}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{p}{(}\PY{n}{emp10}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{emp}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{*} \PY{l+m+mf}{1.}\PY{p}{)} \PY{o}{/} \PY{n}{emp10}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Shape\PYZus{}area}\PY{l+s}{\PYZsq{}}\PY{p}{]}
+       \PY{n}{emp10}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{GISJOIN}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{emp10}\PY{o}{.}\PY{n}{index}
+       \PY{n}{pars} \PY{o}{=} \PY{p}{[}\PY{p}{(}\PY{n}{emp10}\PY{p}{[}\PY{n}{emp10}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{msa}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{==}\PY{n}{msa}\PY{p}{]}\PY{p}{,} \PY{n}{shp\PYZus{}link}\PY{p}{,} \PY{n}{cent\PYZus{}out10}\PY{p}{)} \PYZbs{}
+               \PY{k}{for} \PY{n}{msa} \PY{o+ow}{in} \PY{n}{emp10}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{msa}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{unique}\PY{p}{(}\PY{p}{)}\PY{p}{]}
+       
+       \PY{n}{out} \PY{o}{=} \PY{n}{pool}\PY{o}{.}\PY{n}{map}\PY{p}{(}\PY{n}{tools}\PY{o}{.}\PY{n}{act\PYZus{}on\PYZus{}msa}\PY{p}{,} \PY{n}{pars}\PY{p}{[}\PY{p}{:}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{)}
+\end{Verbatim}
+
+
+    \subsection{Evolution tables}
+
+
+    Once this has run, we have created three folders that contain shapefiles
+with the identified centers in each MSA in each period. A compilation of
+these can be found in the repository in the \texttt{geojson} format, one
+for each year. The output can be reloaded again and used to recreate
+Tables 2-4 in the paper.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}54}]:} \PY{n}{cent\PYZus{}out90} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{/Users/dani/Desktop/test90/}\PY{l+s}{\PYZsq{}}
+         \PY{n}{cent\PYZus{}out00} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{/Users/dani/Desktop/test00/}\PY{l+s}{\PYZsq{}}
+         \PY{n}{cent\PYZus{}out10} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{/Users/dani/Desktop/test10/}\PY{l+s}{\PYZsq{}}
+         
+         \PY{c}{\PYZsh{} Collect all results}
+         \PY{n}{years} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{1990}\PY{p}{,} \PY{l+m+mi}{2000}\PY{p}{,} \PY{l+m+mi}{2010}\PY{p}{]}
+         \PY{n}{links} \PY{o}{=} \PY{p}{[}\PY{n}{cent\PYZus{}out90}\PY{p}{,} \PY{n}{cent\PYZus{}out00}\PY{p}{,} \PY{n}{cent\PYZus{}out10}\PY{p}{]}
+         \PY{n}{db} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+         \PY{k}{for} \PY{n}{year}\PY{p}{,} \PY{n}{link} \PY{o+ow}{in} \PY{n+nb}{zip}\PY{p}{(}\PY{n}{years}\PY{p}{,} \PY{n}{links}\PY{p}{)}\PY{p}{:}
+             \PY{n}{temp} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{concat}\PY{p}{(}\PY{n+nb}{map}\PY{p}{(}\PY{k}{lambda} \PY{n}{l}\PY{p}{:} \PY{n}{pd}\PY{o}{.}\PY{n}{read\PYZus{}csv}\PY{p}{(}\PY{n}{l}\PY{p}{,} \PY{n}{index\PYZus{}col}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{,} \PYZbs{}
+                     \PY{p}{[}\PY{n}{link}\PY{o}{+}\PY{n}{l} \PY{k}{for} \PY{n}{l} \PY{o+ow}{in} \PY{n}{os}\PY{o}{.}\PY{n}{listdir}\PY{p}{(}\PY{n}{link}\PY{p}{)} \PY{k}{if} \PY{n}{l}\PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mi}{4}\PY{p}{:}\PY{p}{]}\PY{o}{==}\PY{l+s}{\PYZsq{}}\PY{l+s}{.csv}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+             \PY{n}{temp}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{year}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{year}
+             \PY{n}{db}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{temp}\PY{p}{)}
+         \PY{n}{db} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{concat}\PY{p}{(}\PY{n}{db}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}55}]:} \PY{n}{tab} \PY{o}{=} \PY{n}{tools}\PY{o}{.}\PY{n}{evol\PYZus{}tab}\PY{p}{(}\PY{n}{db}\PY{p}{)}
+         \PY{n}{tab}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}55}]:} 1990         2000         2010       
+         empty        empty        empty            1
+                      monocentric  monocentric     15
+                                   polycentric      2
+                      polycentric  monocentric      1
+         monocentric  empty        monocentric      1
+                      monocentric  empty            2
+                                   monocentric    148
+                                   polycentric     22
+                      polycentric  monocentric      7
+                                   polycentric     23
+         polycentric  monocentric  empty            1
+                                   monocentric     29
+                                   polycentric     11
+                      polycentric  monocentric      6
+                                   polycentric     90
+         dtype: int64
+\end{Verbatim}
+        
+    Which we can re-format to make it look more appealing:
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}37}]:} \PY{k}{print} \PY{l+s}{\PYZdq{}}\PY{l+s}{Table 2}\PY{l+s}{\PYZdq{}}
+         \PY{n}{tab2} \PY{o}{=} \PY{n}{tab}\PY{o}{.}\PY{n}{groupby}\PY{p}{(}\PY{n}{level}\PY{o}{=}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{p}{)}\PY{o}{.}\PY{n}{unstack}\PY{p}{(}\PY{p}{)}\PY{o}{.}\PY{n}{fillna}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{)}
+         \PY{n}{tab2}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Total 1990}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{tab2}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}
+         \PY{n}{tab2}\PY{o}{.}\PY{n}{loc}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Total 2000}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{p}{:}\PY{p}{]} \PY{o}{=} \PY{n}{tab2}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{)}
+         \PY{n}{tab2}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Table 2
+    \end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}37}]:} 2000         empty  monocentric  polycentric  Total 1990
+         1990                                                    
+         empty            1           17            1          19
+         monocentric      1          172           30         203
+         polycentric      0           41           96         137
+         Total 2000       2          230          127         359
+\end{Verbatim}
+        
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}42}]:} \PY{k}{print} \PY{l+s}{\PYZdq{}}\PY{l+s}{Table 3}\PY{l+s}{\PYZdq{}}
+         \PY{n}{tab3} \PY{o}{=} \PY{n}{tab}\PY{o}{.}\PY{n}{groupby}\PY{p}{(}\PY{n}{level}\PY{o}{=}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{]}\PY{p}{)}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{p}{)}\PY{o}{.}\PY{n}{unstack}\PY{p}{(}\PY{p}{)}\PY{o}{.}\PY{n}{fillna}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{)}
+         \PY{n}{tab3}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Total 2000}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{tab3}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}
+         \PY{n}{tab3}\PY{o}{.}\PY{n}{loc}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Total 2010}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{p}{:}\PY{p}{]} \PY{o}{=} \PY{n}{tab3}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{)}
+         \PY{n}{tab3}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Table 3
+    \end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}42}]:} 2010         empty  monocentric  polycentric  Total 2000
+         2000                                                    
+         empty            1            1            0           2
+         monocentric      3          192           35         230
+         polycentric      0           14          113         127
+         Total 2010       4          207          148         359
+\end{Verbatim}
+        
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}41}]:} \PY{k}{print} \PY{l+s}{\PYZdq{}}\PY{l+s}{Table 4}\PY{l+s}{\PYZdq{}}
+         \PY{n}{tab4} \PY{o}{=} \PY{n}{tab}\PY{o}{.}\PY{n}{groupby}\PY{p}{(}\PY{n}{level}\PY{o}{=}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{]}\PY{p}{)}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{p}{)}\PY{o}{.}\PY{n}{unstack}\PY{p}{(}\PY{p}{)}\PY{o}{.}\PY{n}{fillna}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{)}
+         \PY{n}{tab4}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Total 2000}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{tab4}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}
+         \PY{n}{tab4}\PY{o}{.}\PY{n}{loc}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Total 2010}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{p}{:}\PY{p}{]} \PY{o}{=} \PY{n}{tab4}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{)}
+         \PY{n}{tab4}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Table 4
+    \end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}41}]:} 2010         empty  monocentric  polycentric  Total 2000
+         1990                                                    
+         empty            1           16            2          19
+         monocentric      2          156           45         203
+         polycentric      1           35          101         137
+         Total 2010       4          207          148         359
+\end{Verbatim}
+        
+
+    \subsection{Spatial analysis of polycentricity}
+
+
+    For this section, we also rely on two additional layers. One is the
+centroid of the MSAs, and is derived from the previous shapefiles by
+performing a simple GIS operation and projecting the output into the
+\texttt{EPSG:2146}. The second one is an additional shapefile downloaded
+from NHGIS as well that contains the polygons of the US continental
+lower states. Since this is very common and is used only for aesthetic
+purposes, the shapefile is not provided either.
+
+For this illustration, we use only 99 random permutations to build the
+empirical distribution of both the global and local versions of Moran's
+I. The results presented in the paper, however, are based on 99,999 and
+thus are more reliable (although take much longer to run).
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}93}]:} \PY{k+kn}{import} \PY{n+nn}{pysal} \PY{k+kn}{as} \PY{n+nn}{ps}
+         \PY{n}{msa\PYZus{}pts\PYZus{}link} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{/Users/dani/Desktop/msas\PYZus{}points2163.shp}\PY{l+s}{\PYZsq{}}
+         \PY{n}{states\PYZus{}link} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{/Users/dani/Desktop/states2163.shp}\PY{l+s}{\PYZsq{}}
+         \PY{n}{years} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{1990}\PY{p}{,} \PY{l+m+mi}{2000}\PY{p}{,} \PY{l+m+mi}{2010}\PY{p}{]}
+         \PY{n}{perms} \PY{o}{=} \PY{l+m+mi}{99}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}94}]:} \PY{n}{msas} \PY{o}{=} \PY{n}{db}\PY{o}{.}\PY{n}{groupby}\PY{p}{(}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{msa}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{year}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{)}\PY{o}{.}\PY{n}{apply}\PY{p}{(}\PYZbs{}
+                     \PY{k}{lambda} \PY{n}{x}\PY{p}{:} \PY{n}{x}\PY{o}{.}\PY{n}{groupby}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{center\PYZus{}id}\PY{l+s}{\PYZsq{}}\PY{p}{)}\PY{o}{.}\PY{n}{ngroups}\PY{p}{)}\PY{o}{.}\PY{n}{unstack}\PY{p}{(}\PY{p}{)}
+         \PY{n+nb}{ord} \PY{o}{=} \PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{m}\PY{l+s}{\PYZsq{}}\PY{o}{+}\PY{n}{i} \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n}{ps}\PY{o}{.}\PY{n}{open}\PY{p}{(}\PY{n}{msa\PYZus{}pts\PYZus{}link}\PY{o}{.}\PY{n}{replace}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{.shp}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{.dbf}\PY{l+s}{\PYZsq{}}\PY{p}{)}\PY{p}{)}\PY{o}{.}\PY{n}{by\PYZus{}col}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{CBSA}\PY{l+s}{\PYZsq{}}\PY{p}{)}\PY{p}{]}
+         \PY{n}{msas} \PY{o}{=} \PY{n}{msas}\PY{o}{.}\PY{n}{reindex}\PY{p}{(}\PY{n+nb}{ord}\PY{p}{)}
+\end{Verbatim}
+
+
+    \subsubsection{Moran's I}
+
+
+    Moran's I indices that are used to justify further spatial analysis in
+the paper. The idea is to explore whether the spatial arrangement of
+polycentricity follows any specific pattern discernible from spatial
+randomness. Rejecting the null points to such case.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}69}]:} \PY{n}{morans} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+         \PY{k}{for} \PY{n}{k} \PY{o+ow}{in} \PY{p}{[}\PY{l+m+mi}{9}\PY{p}{]}\PY{p}{:}
+             \PY{n}{w} \PY{o}{=} \PY{n}{ps}\PY{o}{.}\PY{n}{knnW\PYZus{}from\PYZus{}shapefile}\PY{p}{(}\PY{n}{msa\PYZus{}pts\PYZus{}link}\PY{p}{,} \PY{n}{k}\PY{o}{=}\PY{n}{k}\PY{p}{)}
+             \PY{n}{w}\PY{o}{.}\PY{n}{transform} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{R}\PY{l+s}{\PYZsq{}}
+             \PY{n}{m\PYZus{}90} \PY{o}{=} \PY{n}{ps}\PY{o}{.}\PY{n}{Moran}\PY{p}{(}\PY{n}{msas}\PY{p}{[}\PY{l+m+mi}{1990}\PY{p}{]}\PY{o}{.}\PY{n}{astype}\PY{p}{(}\PY{n+nb}{float}\PY{p}{)}\PY{p}{,} \PY{n}{w}\PY{p}{,} \PY{n}{permutations}\PY{o}{=}\PY{n}{perms}\PY{p}{)}
+             \PY{n}{m\PYZus{}00} \PY{o}{=} \PY{n}{ps}\PY{o}{.}\PY{n}{Moran}\PY{p}{(}\PY{n}{msas}\PY{p}{[}\PY{l+m+mi}{2000}\PY{p}{]}\PY{o}{.}\PY{n}{astype}\PY{p}{(}\PY{n+nb}{float}\PY{p}{)}\PY{p}{,} \PY{n}{w}\PY{p}{,} \PY{n}{permutations}\PY{o}{=}\PY{n}{perms}\PY{p}{)}
+             \PY{n}{m\PYZus{}10} \PY{o}{=} \PY{n}{ps}\PY{o}{.}\PY{n}{Moran}\PY{p}{(}\PY{n}{msas}\PY{p}{[}\PY{l+m+mi}{2010}\PY{p}{]}\PY{o}{.}\PY{n}{astype}\PY{p}{(}\PY{n+nb}{float}\PY{p}{)}\PY{p}{,} \PY{n}{w}\PY{p}{,} \PY{n}{permutations}\PY{o}{=}\PY{n}{perms}\PY{p}{)}
+             \PY{n}{t90\PYZus{}00} \PY{o}{=} \PY{p}{(}\PY{n}{msas}\PY{p}{[}\PY{l+m+mi}{2000}\PY{p}{]} \PY{o}{\PYZhy{}} \PY{n}{msas}\PY{p}{[}\PY{l+m+mi}{1990}\PY{p}{]}\PY{p}{)}\PY{o}{.}\PY{n}{astype}\PY{p}{(}\PY{n+nb}{float}\PY{p}{)}
+             \PY{n}{m\PYZus{}90\PYZus{}00} \PY{o}{=} \PY{n}{ps}\PY{o}{.}\PY{n}{Moran}\PY{p}{(}\PY{n}{t90\PYZus{}00}\PY{p}{,} \PY{n}{w}\PY{p}{,} \PY{n}{permutations}\PY{o}{=}\PY{n}{perms}\PY{p}{)}
+             \PY{n}{t00\PYZus{}10} \PY{o}{=} \PY{p}{(}\PY{n}{msas}\PY{p}{[}\PY{l+m+mi}{2010}\PY{p}{]} \PY{o}{\PYZhy{}} \PY{n}{msas}\PY{p}{[}\PY{l+m+mi}{2000}\PY{p}{]}\PY{p}{)}\PY{o}{.}\PY{n}{astype}\PY{p}{(}\PY{n+nb}{float}\PY{p}{)}
+             \PY{n}{m\PYZus{}00\PYZus{}10} \PY{o}{=} \PY{n}{ps}\PY{o}{.}\PY{n}{Moran}\PY{p}{(}\PY{n}{t00\PYZus{}10}\PY{p}{,} \PY{n}{w}\PY{p}{,} \PY{n}{permutations}\PY{o}{=}\PY{n}{perms}\PY{p}{)}
+             \PY{n}{out} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{p}{\PYZob{}}\PY{l+s}{\PYZsq{}}\PY{l+s}{I}\PY{l+s}{\PYZsq{}}\PY{p}{:} \PY{p}{[}\PY{n}{m\PYZus{}90}\PY{o}{.}\PY{n}{I}\PY{p}{,} \PY{n}{m\PYZus{}00}\PY{o}{.}\PY{n}{I}\PY{p}{,} \PY{n}{m\PYZus{}10}\PY{o}{.}\PY{n}{I}\PY{p}{,} \PY{n}{m\PYZus{}90\PYZus{}00}\PY{o}{.}\PY{n}{I}\PY{p}{,} \PY{n}{m\PYZus{}00\PYZus{}10}\PY{o}{.}\PY{n}{I}\PY{p}{]}\PY{p}{,} \PYZbs{}
+                     \PY{l+s}{\PYZsq{}}\PY{l+s}{p}\PY{l+s}{\PYZsq{}}\PY{p}{:} \PY{p}{[}\PY{n}{m\PYZus{}90}\PY{o}{.}\PY{n}{p\PYZus{}sim}\PY{p}{,} \PY{n}{m\PYZus{}00}\PY{o}{.}\PY{n}{p\PYZus{}sim}\PY{p}{,} \PY{n}{m\PYZus{}10}\PY{o}{.}\PY{n}{p\PYZus{}sim}\PY{p}{,} \PY{n}{m\PYZus{}90\PYZus{}00}\PY{o}{.}\PY{n}{p\PYZus{}sim}\PY{p}{,} \PY{n}{m\PYZus{}00\PYZus{}10}\PY{o}{.}\PY{n}{p\PYZus{}sim}\PY{p}{]}\PY{p}{,} \PYZbs{}
+                     \PY{l+s}{\PYZsq{}}\PY{l+s}{var}\PY{l+s}{\PYZsq{}}\PY{p}{:} \PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{m\PYZus{}90}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{m\PYZus{}00}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{m\PYZus{}10}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{m\PYZus{}90\PYZus{}00}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{m\PYZus{}00\PYZus{}10}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{\PYZcb{}}\PY{p}{)}
+             \PY{n}{out}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{w}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{w}\PY{l+s}{\PYZsq{}} \PY{o}{+} \PY{n+nb}{str}\PY{p}{(}\PY{n}{k}\PY{p}{)}
+             \PY{n}{morans}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{out}\PY{p}{)}
+         \PY{n}{morans} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{concat}\PY{p}{(}\PY{n}{morans}\PY{p}{)}\PY{o}{.}\PY{n}{pivot}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{var}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{w}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{morans}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}69}]:}                 I     p
+         w              w9    w9
+         var                    
+         m\_00     0.061979  0.03
+         m\_00\_10  0.036066  0.09
+         m\_10     0.074421  0.01
+         m\_90     0.036422  0.11
+         m\_90\_00  0.020798  0.12
+\end{Verbatim}
+        
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}86}]:} \PY{c}{\PYZsh{} Within a loop in case the user wants to explore different values for k}
+         \PY{k}{for} \PY{n}{k} \PY{o+ow}{in} \PY{p}{[}\PY{l+m+mi}{9}\PY{p}{]}\PY{p}{:}
+             \PY{n}{w} \PY{o}{=} \PY{n}{ps}\PY{o}{.}\PY{n}{knnW\PYZus{}from\PYZus{}shapefile}\PY{p}{(}\PY{n}{msa\PYZus{}pts\PYZus{}link}\PY{p}{,} \PY{n}{k}\PY{o}{=}\PY{n}{k}\PY{p}{)}
+             \PY{n}{w}\PY{o}{.}\PY{n}{transform} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{R}\PY{l+s}{\PYZsq{}}
+             \PY{n}{m\PYZus{}90} \PY{o}{=} \PY{n}{ps}\PY{o}{.}\PY{n}{Moran\PYZus{}Local}\PY{p}{(}\PY{n}{msas}\PY{p}{[}\PY{l+m+mi}{1990}\PY{p}{]}\PY{o}{.}\PY{n}{astype}\PY{p}{(}\PY{n+nb}{float}\PY{p}{)}\PY{o}{.}\PY{n}{values}\PY{p}{,} \PY{n}{w}\PY{p}{,} \PY{n}{permutations}\PY{o}{=}\PY{n}{perms}\PY{p}{)}
+             \PY{n}{p} \PY{o}{=} \PY{n}{tools}\PY{o}{.}\PY{n}{plot\PYZus{}lisa}\PY{p}{(}\PY{n}{m\PYZus{}90}\PY{p}{,} \PY{n}{st}\PY{o}{=}\PY{n}{states\PYZus{}link}\PY{p}{,} \PY{n}{msa}\PY{o}{=}\PY{n}{msa\PYZus{}pts\PYZus{}link}\PY{p}{,} \PY{n}{title}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{Centers in 1990}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+             \PY{n}{m\PYZus{}00} \PY{o}{=} \PY{n}{ps}\PY{o}{.}\PY{n}{Moran\PYZus{}Local}\PY{p}{(}\PY{n}{msas}\PY{p}{[}\PY{l+m+mi}{2000}\PY{p}{]}\PY{o}{.}\PY{n}{astype}\PY{p}{(}\PY{n+nb}{float}\PY{p}{)}\PY{o}{.}\PY{n}{values}\PY{p}{,} \PY{n}{w}\PY{p}{,} \PY{n}{permutations}\PY{o}{=}\PY{n}{perms}\PY{p}{)}
+             \PY{n}{p} \PY{o}{=} \PY{n}{tools}\PY{o}{.}\PY{n}{plot\PYZus{}lisa}\PY{p}{(}\PY{n}{m\PYZus{}00}\PY{p}{,} \PY{n}{st}\PY{o}{=}\PY{n}{states\PYZus{}link}\PY{p}{,} \PY{n}{msa}\PY{o}{=}\PY{n}{msa\PYZus{}pts\PYZus{}link}\PY{p}{,} \PY{n}{title}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{Centers in 2000 | Map 1}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+             \PY{n}{m\PYZus{}10} \PY{o}{=} \PY{n}{ps}\PY{o}{.}\PY{n}{Moran\PYZus{}Local}\PY{p}{(}\PY{n}{msas}\PY{p}{[}\PY{l+m+mi}{2010}\PY{p}{]}\PY{o}{.}\PY{n}{astype}\PY{p}{(}\PY{n+nb}{float}\PY{p}{)}\PY{o}{.}\PY{n}{values}\PY{p}{,} \PY{n}{w}\PY{p}{,} \PY{n}{permutations}\PY{o}{=}\PY{n}{perms}\PY{p}{)}
+             \PY{n}{p} \PY{o}{=} \PY{n}{tools}\PY{o}{.}\PY{n}{plot\PYZus{}lisa}\PY{p}{(}\PY{n}{m\PYZus{}10}\PY{p}{,} \PY{n}{st}\PY{o}{=}\PY{n}{states\PYZus{}link}\PY{p}{,} \PY{n}{msa}\PY{o}{=}\PY{n}{msa\PYZus{}pts\PYZus{}link}\PY{p}{,} \PY{n}{title}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{Centers in 2010}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+         
+             \PY{n}{t90\PYZus{}00} \PY{o}{=} \PY{p}{(}\PY{n}{msas}\PY{p}{[}\PY{l+m+mi}{2000}\PY{p}{]} \PY{o}{\PYZhy{}} \PY{n}{msas}\PY{p}{[}\PY{l+m+mi}{1990}\PY{p}{]}\PY{p}{)}\PY{o}{.}\PY{n}{astype}\PY{p}{(}\PY{n+nb}{float}\PY{p}{)}\PY{o}{.}\PY{n}{values}
+             \PY{n}{m\PYZus{}90\PYZus{}00} \PY{o}{=} \PY{n}{ps}\PY{o}{.}\PY{n}{Moran\PYZus{}Local}\PY{p}{(}\PY{n}{t90\PYZus{}00}\PY{p}{,} \PY{n}{w}\PY{p}{,} \PY{n}{permutations}\PY{o}{=}\PY{n}{perms}\PY{p}{)}
+             \PY{n}{p} \PY{o}{=} \PY{n}{tools}\PY{o}{.}\PY{n}{plot\PYZus{}lisa}\PY{p}{(}\PY{n}{m\PYZus{}90\PYZus{}00}\PY{p}{,} \PY{n}{st}\PY{o}{=}\PY{n}{states\PYZus{}link}\PY{p}{,} \PY{n}{msa}\PY{o}{=}\PY{n}{msa\PYZus{}pts\PYZus{}link}\PY{p}{,} \PYZbs{}
+                                 \PY{n}{title}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{Change in centers 1990\PYZhy{}2000}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+             \PY{n}{t00\PYZus{}10} \PY{o}{=} \PY{p}{(}\PY{n}{msas}\PY{p}{[}\PY{l+m+mi}{2010}\PY{p}{]} \PY{o}{\PYZhy{}} \PY{n}{msas}\PY{p}{[}\PY{l+m+mi}{2000}\PY{p}{]}\PY{p}{)}\PY{o}{.}\PY{n}{astype}\PY{p}{(}\PY{n+nb}{float}\PY{p}{)}\PY{o}{.}\PY{n}{values}
+             \PY{n}{m\PYZus{}00\PYZus{}10} \PY{o}{=} \PY{n}{ps}\PY{o}{.}\PY{n}{Moran\PYZus{}Local}\PY{p}{(}\PY{n}{t00\PYZus{}10}\PY{p}{,} \PY{n}{w}\PY{p}{,} \PY{n}{permutations}\PY{o}{=}\PY{n}{perms}\PY{p}{)}
+             \PY{n}{p} \PY{o}{=} \PY{n}{tools}\PY{o}{.}\PY{n}{plot\PYZus{}lisa}\PY{p}{(}\PY{n}{m\PYZus{}00\PYZus{}10}\PY{p}{,} \PY{n}{st}\PY{o}{=}\PY{n}{states\PYZus{}link}\PY{p}{,} \PY{n}{msa}\PY{o}{=}\PY{n}{msa\PYZus{}pts\PYZus{}link}\PY{p}{,} 
+                                 \PY{n}{title}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{Change in centers 2000\PYZhy{}2010 | Map 2}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{us_centers_files/us_centers_45_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{us_centers_files/us_centers_45_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{us_centers_files/us_centers_45_2.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{us_centers_files/us_centers_45_3.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{us_centers_files/us_centers_45_4.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+
+    \subsection{City Characterization}
+
+
+    Results from the random labeling analysis performed in Section 6 and
+presented in Tables 5 to 8 of the paper. This basically calculates
+average values for several variables by type of MSA (no centers,
+monocentric, polycentric) and tests for statistically significant
+differences between the averages by using the random labeling technique,
+borrowed from
+\href{http://www.tandfonline.com/doi/abs/10.1080/17421772.2010.493955\#.U8XSiRYhSao}{Rey
+\& Sastré-Gutiérrez (2010)}. The variables employed are: total
+population, employment density, income per capita and percentage of
+people below the poverty line.
+
+Population, income and poverty are also obtained from NHGIS and not
+redistributed in this context. Employment and density are calculated
+from the previous data shown in the sections above.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}121}]:} \PY{n}{pop00F}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{/Users/dani/AAA/LargeData/T\PYZhy{}CentersData/attributes/5\PYZhy{}pop/pop2000/}\PY{l+s}{\PYZsq{}}
+          \PY{n}{pop00} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{concat}\PY{p}{(}\PY{p}{[}\PY{n}{tools}\PY{o}{.}\PY{n}{load\PYZus{}soc\PYZus{}ec}\PY{p}{(}\PY{n}{pop00F}\PY{o}{+}\PY{n}{l}\PY{p}{)} \PY{k}{for} \PY{n}{l} \PY{o+ow}{in} \PY{n}{os}\PY{o}{.}\PY{n}{listdir}\PY{p}{(}\PY{n}{pop00F}\PY{p}{)}\PY{p}{]}\PY{p}{)}
+          \PY{n}{pop00} \PY{o}{=} \PY{n}{pop00}\PY{o}{.}\PY{n}{groupby}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{msa}\PY{l+s}{\PYZsq{}}\PY{p}{)}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{p}{)}
+                                                                                        
+          \PY{n}{sec00F}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{/Users/dani/AAA/LargeData/T\PYZhy{}CentersData/attributes/7\PYZhy{}socEc/socEc2000/}\PY{l+s}{\PYZsq{}}
+          \PY{n}{sec00} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{concat}\PY{p}{(}\PY{p}{[}\PY{n}{tools}\PY{o}{.}\PY{n}{load\PYZus{}soc\PYZus{}ec}\PY{p}{(}\PY{n}{sec00F}\PY{o}{+}\PY{n}{l}\PY{p}{)} \PY{k}{for} \PY{n}{l} \PY{o+ow}{in} \PY{n}{os}\PY{o}{.}\PY{n}{listdir}\PY{p}{(}\PY{n}{sec00F}\PY{p}{)}\PY{p}{]}\PY{p}{)}
+          \PY{n}{sec00} \PY{o}{=} \PY{n}{sec00}\PY{o}{.}\PY{n}{groupby}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{msa}\PY{l+s}{\PYZsq{}}\PY{p}{)}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{p}{)}\PY{o}{.}\PY{n}{drop}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{incpc}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}
+                           
+          \PY{n}{msas\PYZus{}soec} \PY{o}{=} \PY{n}{db}\PY{o}{.}\PY{n}{groupby}\PY{p}{(}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{msa}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{year}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{)}\PY{o}{.}\PY{n}{apply}\PY{p}{(}\PYZbs{}
+                      \PY{k}{lambda} \PY{n}{x}\PY{p}{:} \PY{n}{x}\PY{o}{.}\PY{n}{groupby}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{center\PYZus{}id}\PY{l+s}{\PYZsq{}}\PY{p}{)}\PY{o}{.}\PY{n}{ngroups}\PY{p}{)}\PYZbs{}
+                      \PY{o}{.}\PY{n}{apply}\PY{p}{(}\PY{n}{tools}\PY{o}{.}\PY{n}{\PYZus{}monopoly}\PY{p}{)}\PY{o}{.}\PY{n}{unstack}\PY{p}{(}\PY{p}{)}
+          \PY{n}{msas\PYZus{}soec} \PY{o}{=} \PY{n}{msas\PYZus{}soec}\PY{o}{.}\PY{n}{join}\PY{p}{(}\PY{n}{pop00}\PY{p}{)}\PY{o}{.}\PY{n}{join}\PY{p}{(}\PY{n}{sec00}\PY{p}{)}
+          \PY{n}{msas\PYZus{}soec} \PY{o}{=} \PY{n}{msas\PYZus{}soec}\PY{o}{.}\PY{n}{join}\PY{p}{(}\PY{n}{db}\PY{p}{[}\PY{n}{db}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{year}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{==}\PY{l+m+mi}{2000}\PY{p}{]}\PY{p}{[}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{emp}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Shape\PYZus{}area}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{msa}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{]}\PYZbs{}
+                  \PY{o}{.}\PY{n}{groupby}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{msa}\PY{l+s}{\PYZsq{}}\PY{p}{)}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+          \PY{n}{msas\PYZus{}soec}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{emp\PYZus{}dens}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{msas\PYZus{}soec}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{emp}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{*} \PY{l+m+mf}{1.} \PY{o}{/} \PY{n}{msas\PYZus{}soec}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Shape\PYZus{}area}\PY{l+s}{\PYZsq{}}\PY{p}{]}
+          \PY{n}{msas\PYZus{}soec}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{inc\PYZus{}pc}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{msas\PYZus{}soec}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{inc}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{*} \PY{l+m+mf}{1.} \PY{o}{/} \PY{n}{msas\PYZus{}soec}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{pop}\PY{l+s}{\PYZsq{}}\PY{p}{]}
+          \PY{n}{msas\PYZus{}soec}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{pct\PYZus{}below}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{msas\PYZus{}soec}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{below}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{*} \PY{l+m+mf}{100.} \PY{o}{/} \PY{n}{msas\PYZus{}soec}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{pop}\PY{l+s}{\PYZsq{}}\PY{p}{]}
+          \PY{n}{msas\PYZus{}soec} \PY{o}{=} \PY{n}{msas\PYZus{}soec}\PY{p}{[}\PY{p}{[}\PY{l+m+mi}{1990}\PY{p}{,} \PY{l+m+mi}{2000}\PY{p}{,} \PY{l+m+mi}{2010}\PY{p}{,} \PYZbs{}
+                  \PY{l+s}{\PYZsq{}}\PY{l+s}{pop}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{emp\PYZus{}dens}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{inc\PYZus{}pc}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{pct\PYZus{}below}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{]}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}133}]:} \PY{n}{perms} \PY{o}{=} \PY{l+m+mi}{99}
+          \PY{n}{rl90\PYZus{}00} \PY{o}{=} \PY{n}{tools}\PY{o}{.}\PY{n}{do\PYZus{}rl}\PY{p}{(}\PY{n}{msas\PYZus{}soec}\PY{p}{,} \PY{p}{[}\PY{l+m+mi}{1990}\PY{p}{,} \PY{l+m+mi}{2000}\PY{p}{]}\PY{p}{,} \PY{n}{perms}\PY{p}{)}
+          \PY{k}{for} \PY{n}{var} \PY{o+ow}{in} \PY{n}{rl90\PYZus{}00}\PY{p}{:}
+              \PY{k}{print} \PY{l+s}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+si}{\PYZpc{}s}\PY{l+s}{\PYZdq{}}\PY{o}{\PYZpc{}}\PY{k}{var}
+              \PY{k}{print} \PY{n}{rl90\PYZus{}00}\PY{p}{[}\PY{n}{var}\PY{p}{]}\PY{o}{.}\PY{n}{unstack}\PY{p}{(}\PY{p}{)}\PY{o}{.}\PY{n}{fillna}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+          
+          \PY{k}{print} \PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}}\PY{l+s}{\PYZsq{}}
+          \PY{n}{rl\PYZus{}tables} \PY{o}{=} \PY{p}{[}\PY{p}{]}   
+          \PY{n}{rl00\PYZus{}10} \PY{o}{=} \PY{n}{tools}\PY{o}{.}\PY{n}{do\PYZus{}rl}\PY{p}{(}\PY{n}{msas\PYZus{}soec}\PY{p}{,} \PY{p}{[}\PY{l+m+mi}{2000}\PY{p}{,} \PY{l+m+mi}{2010}\PY{p}{]}\PY{p}{,} \PY{n}{perms}\PY{p}{)}
+          \PY{k}{for} \PY{n}{var} \PY{o+ow}{in} \PY{n}{rl00\PYZus{}10}\PY{p}{:}
+              \PY{k}{print} \PY{l+s}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+si}{\PYZpc{}s}\PY{l+s}{\PYZdq{}}\PY{o}{\PYZpc{}}\PY{k}{var}
+              \PY{n}{tab} \PY{o}{=} \PY{n}{rl00\PYZus{}10}\PY{p}{[}\PY{n}{var}\PY{p}{]}\PY{o}{.}\PY{n}{unstack}\PY{p}{(}\PY{p}{)}\PY{o}{.}\PY{n}{fillna}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+              \PY{k}{print} \PY{n}{tab}
+              \PY{n}{rl\PYZus{}tables}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{tab}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+pop
+2000             empty       monocentric       polycentric
+1990                                                      
+empty        57961.0-*   123688.117647-*           79551.0
+monocentric    71914.0  188404.046512-**     416521.833333
+polycentric                359553.609756  1749223.21875+**
+
+	emp\_dens
+2000                 empty       monocentric       polycentric
+1990                                                          
+empty        3.97835490525  13.8418248027-**     41.5310305712
+monocentric   1.7953228977  23.1552069292-**     32.0401867937
+polycentric                    33.7103582425  78.0635013324+**
+
+	inc\_pc
+2000                    empty       monocentric       polycentric
+1990                                                             
+empty           18261.7035593  17865.5425507-**     21530.0851026
+monocentric  13672.9440721-**  19173.5165033-**     20090.7586838
+polycentric                       19209.1533279  21906.4143172+**
+
+	pct\_below
+2000                 empty      monocentric       polycentric
+1990                                                         
+empty        13.1122651438  14.233278484+**     8.09417857726
+monocentric  14.5312456545    12.5869946497     12.4074469974
+polycentric                    12.295737511  11.1312509008-**
+-------------------------------------------------------------------
+
+	pop
+2010                 empty       monocentric       polycentric
+2000                                                          
+empty              57961.0           71914.0                  
+monocentric  122379.666667  197135.020833-**     315223.685714
+polycentric                    473461.142857  1538691.84956+**
+
+	emp\_dens
+2010                 empty       monocentric      polycentric
+2000                                                         
+empty        3.97835490525      1.7953228977                 
+monocentric  24.2420604204  22.4362925013-**    34.8467702828
+polycentric                    28.1182516111  71.709533095+**
+
+	inc\_pc
+2010                 empty       monocentric       polycentric
+2000                                                          
+empty        18261.7035593   13672.9440721-*                  
+monocentric  18383.7643691  18922.0857024-**     20026.9314404
+polycentric                    20818.9988839  21555.7755371+**
+
+	pct\_below
+2010                 empty       monocentric       polycentric
+2000                                                          
+empty        13.1122651438     14.5312456545                  
+monocentric  11.0085750881  12.8765604742+**     11.5922490179
+polycentric                    12.0246560865  11.3324999094-**
+    \end{Verbatim}
+
+    These tables can be presented in a more pleasant way, adding the global
+averages as well the way they are shown in the paper:
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}151}]:} \PY{k}{print} \PY{l+s}{\PYZdq{}}\PY{l+s}{Table 5: Size}\PY{l+s}{\PYZdq{}}
+          \PY{k}{print} \PY{l+s}{\PYZdq{}}\PY{l+s}{Global average: }\PY{l+s+si}{\PYZpc{}.1f}\PY{l+s}{\PYZdq{}}\PY{o}{\PYZpc{}}\PY{k}{msas\PYZus{}soec}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{pop}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{p}{)}
+          \PY{n}{rl\PYZus{}tables}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Table 5: Size
+Global average: 640335.4
+    \end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}151}]:} 2010                 empty       monocentric       polycentric
+          2000                                                          
+          empty              57961.0           71914.0                  
+          monocentric  122379.666667  197135.020833-**     315223.685714
+          polycentric                    473461.142857  1538691.84956+**
+\end{Verbatim}
+        
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}149}]:} \PY{k}{print} \PY{l+s}{\PYZdq{}}\PY{l+s}{Table 6: Density}\PY{l+s}{\PYZdq{}}
+          \PY{k}{print} \PY{l+s}{\PYZdq{}}\PY{l+s}{Global average: }\PY{l+s+si}{\PYZpc{}.1f}\PY{l+s}{\PYZdq{}}\PY{o}{\PYZpc{}}\PY{k}{msas\PYZus{}soec}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{emp\PYZus{}dens}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{p}{)}
+          \PY{n}{rl\PYZus{}tables}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Table 6: Density
+Global average: 39.3
+    \end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}149}]:} 2010                 empty       monocentric      polycentric
+          2000                                                         
+          empty        3.97835490525      1.7953228977                 
+          monocentric  24.2420604204  22.4362925013-**    34.8467702828
+          polycentric                    28.1182516111  71.709533095+**
+\end{Verbatim}
+        
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}150}]:} \PY{k}{print} \PY{l+s}{\PYZdq{}}\PY{l+s}{Table 7: Income per capita}\PY{l+s}{\PYZdq{}}
+          \PY{k}{print} \PY{l+s}{\PYZdq{}}\PY{l+s}{Global average: }\PY{l+s+si}{\PYZpc{}.1f}\PY{l+s}{\PYZdq{}}\PY{o}{\PYZpc{}}\PY{k}{msas\PYZus{}soec}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{inc\PYZus{}pc}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{p}{)}
+          \PY{n}{rl\PYZus{}tables}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Table 7: Income per capita
+Global average: 19911.8
+    \end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}150}]:} 2010                 empty       monocentric       polycentric
+          2000                                                          
+          empty        18261.7035593   13672.9440721-*                  
+          monocentric  18383.7643691  18922.0857024-**     20026.9314404
+          polycentric                    20818.9988839  21555.7755371+**
+\end{Verbatim}
+        
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}152}]:} \PY{k}{print} \PY{l+s}{\PYZdq{}}\PY{l+s}{Table 8: Poverty (in }\PY{l+s}{\PYZpc{}}\PY{l+s}{)}\PY{l+s}{\PYZdq{}}
+          \PY{k}{print} \PY{l+s}{\PYZdq{}}\PY{l+s}{Global average: }\PY{l+s+si}{\PYZpc{}.1f}\PY{l+s}{\PYZdq{}}\PY{o}{\PYZpc{}}\PY{k}{msas\PYZus{}soec}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{pct\PYZus{}below}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{p}{)}
+          \PY{n}{rl\PYZus{}tables}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{]}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Table 8: Poverty (in \%)
+Global average: 12.2
+    \end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}152}]:} 2010                 empty       monocentric       polycentric
+          2000                                                          
+          empty        13.1122651438     14.5312456545                  
+          monocentric  11.0085750881  12.8765604742+**     11.5922490179
+          polycentric                    12.0246560865  11.3324999094-**
+\end{Verbatim}
+        
+
+    % Add a bibliography block to the postdoc
+    
+    
+    
+    \end{document}

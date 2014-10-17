@@ -1,0 +1,2602 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>US Employment Centers</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+
+      <h1> <i> "The Validity of the Monocentric City Model in a Polycentric Age" </i></h1>
+      <h2> US Metropolitan Areas in 1990, 2000 and 2010 </h2>
+
+                <h2><center> <a href="http://darribas.org">[Dani Arribas-Bel</a> & 
+        <a href="http://dae.unizar.es/fsanz/index.html"> Fernando
+        Sanz-Gracia]</a></h2></center>
+
+        <h1> Results and code </h1>
+
+        <ul>
+          <li><a href="index.html"><strong>About</strong></a></li>
+          <li><a href="map.html"><strong>Maps</strong></a></li>
+          <li><a href="table.html"><strong>Table</strong></a></li>
+          <li><a href="notebook.html"><strong>Results</strong></a></li>
+          <li><a
+              href="http://github.com/darribas/us_employment_centers"><strong>Repository</strong></a></li>
+        </ul>
+
+      </header>
+
+      <section >
+
+      <p> </p>
+
+      <p> Below you can find a table of how many employment centers were
+      identified for each metropolitan area for each year. A csv version is
+      available for download from the repository.</p>
+
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>1990</th>
+      <th>2000</th>
+      <th>2010</th>
+    </tr>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>m10180</th>
+      <th>Abilene, TX</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m10420</th>
+      <th>Akron, OH</th>
+      <td>  2</td>
+      <td>  3</td>
+      <td>  4</td>
+    </tr>
+    <tr>
+      <th>m10500</th>
+      <th>Albany, GA</th>
+      <td>  1</td>
+      <td>  2</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m10580</th>
+      <th>Albany-Schenectady-Troy, NY</th>
+      <td>  5</td>
+      <td>  4</td>
+      <td>  3</td>
+    </tr>
+    <tr>
+      <th>m10740</th>
+      <th>Albuquerque, NM</th>
+      <td>  2</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m10780</th>
+      <th>Alexandria, LA</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m10900</th>
+      <th>Allentown-Bethlehem-Easton, PA-NJ</th>
+      <td>  6</td>
+      <td>  3</td>
+      <td>  4</td>
+    </tr>
+    <tr>
+      <th>m11020</th>
+      <th>Altoona, PA</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  3</td>
+    </tr>
+    <tr>
+      <th>m11100</th>
+      <th>Amarillo, TX</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m11180</th>
+      <th>Ames, IA</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m11300</th>
+      <th>Anderson, IN</th>
+      <td>  2</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m11340</th>
+      <th>Anderson, SC</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m11460</th>
+      <th>Ann Arbor, MI</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m11500</th>
+      <th>Anniston-Oxford, AL</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m11540</th>
+      <th>Appleton, WI</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m11700</th>
+      <th>Asheville, NC</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  2</td>
+    </tr>
+    <tr>
+      <th>m12020</th>
+      <th>Athens-Clarke County, GA</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m12060</th>
+      <th>Atlanta-Sandy Springs-Marietta, GA</th>
+      <td>  9</td>
+      <td>  7</td>
+      <td>  9</td>
+    </tr>
+    <tr>
+      <th>m12100</th>
+      <th>Atlantic City, NJ</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m12220</th>
+      <th>Auburn-Opelika, AL</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m12260</th>
+      <th>Augusta-Richmond County, GA-SC</th>
+      <td>  2</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m12420</th>
+      <th>Austin-Round Rock, TX</th>
+      <td>  2</td>
+      <td>  2</td>
+      <td>  2</td>
+    </tr>
+    <tr>
+      <th>m12540</th>
+      <th>Bakersfield, CA</th>
+      <td>  4</td>
+      <td>  2</td>
+      <td>  3</td>
+    </tr>
+    <tr>
+      <th>m12580</th>
+      <th>Baltimore-Towson, MD</th>
+      <td>  6</td>
+      <td>  5</td>
+      <td>  5</td>
+    </tr>
+    <tr>
+      <th>m12620</th>
+      <th>Bangor, ME</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m12700</th>
+      <th>Barnstable Town, MA</th>
+      <td>  2</td>
+      <td>  3</td>
+      <td>  4</td>
+    </tr>
+    <tr>
+      <th>m12940</th>
+      <th>Baton Rouge, LA</th>
+      <td>  2</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m12980</th>
+      <th>Battle Creek, MI</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m13020</th>
+      <th>Bay City, MI</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m13140</th>
+      <th>Beaumont-Port Arthur, TX</th>
+      <td>  2</td>
+      <td>  2</td>
+      <td>  2</td>
+    </tr>
+    <tr>
+      <th>m13380</th>
+      <th>Bellingham, WA</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m13460</th>
+      <th>Bend, OR</th>
+      <td>  0</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m13740</th>
+      <th>Billings, MT</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m13780</th>
+      <th>Binghamton, NY</th>
+      <td>  3</td>
+      <td>  2</td>
+      <td>  2</td>
+    </tr>
+    <tr>
+      <th>m13820</th>
+      <th>Birmingham-Hoover, AL</th>
+      <td>  2</td>
+      <td>  2</td>
+      <td>  2</td>
+    </tr>
+    <tr>
+      <th>m13900</th>
+      <th>Bismarck, ND</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m13980</th>
+      <th>Blacksburg-Christiansburg-Radford, VA</th>
+      <td>  0</td>
+      <td>  1</td>
+      <td>  2</td>
+    </tr>
+    <tr>
+      <th>m14020</th>
+      <th>Bloomington, IN</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m14060</th>
+      <th>Bloomington-Normal, IL</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  2</td>
+    </tr>
+    <tr>
+      <th>m14260</th>
+      <th>Boise City-Nampa, ID</th>
+      <td>  1</td>
+      <td>  2</td>
+      <td>  2</td>
+    </tr>
+    <tr>
+      <th>m14460</th>
+      <th>Boston-Cambridge-Quincy, MA-NH</th>
+      <td> 10</td>
+      <td>  4</td>
+      <td>  3</td>
+    </tr>
+    <tr>
+      <th>m14500</th>
+      <th>Boulder, CO</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  2</td>
+    </tr>
+    <tr>
+      <th>m14540</th>
+      <th>Bowling Green, KY</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m14740</th>
+      <th>Bremerton-Silverdale, WA</th>
+      <td>  3</td>
+      <td>  2</td>
+      <td>  2</td>
+    </tr>
+    <tr>
+      <th>m14860</th>
+      <th>Bridgeport-Stamford-Norwalk, CT</th>
+      <td>  6</td>
+      <td>  5</td>
+      <td>  5</td>
+    </tr>
+    <tr>
+      <th>m14980</th>
+      <th>Bristol, VA</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m15180</th>
+      <th>Brownsville-Harlingen, TX</th>
+      <td>  3</td>
+      <td>  3</td>
+      <td>  3</td>
+    </tr>
+    <tr>
+      <th>m15260</th>
+      <th>Brunswick, GA</th>
+      <td>  0</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m15380</th>
+      <th>Buffalo-Niagara Falls, NY</th>
+      <td>  4</td>
+      <td>  5</td>
+      <td> 10</td>
+    </tr>
+    <tr>
+      <th>m15500</th>
+      <th>Burlington, NC</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m15540</th>
+      <th>Burlington-South Burlington, VT</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m15940</th>
+      <th>Canton-Massillon, OH</th>
+      <td>  2</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m15980</th>
+      <th>Cape Coral-Fort Myers, FL</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  2</td>
+    </tr>
+    <tr>
+      <th>m16180</th>
+      <th>Carson City, NV</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m16220</th>
+      <th>Casper, WY</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m16300</th>
+      <th>Cedar Rapids, IA</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m16580</th>
+      <th>Champaign-Urbana, IL</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m16620</th>
+      <th>Charleston, WV</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m16700</th>
+      <th>Charleston-North Charleston, SC</th>
+      <td>  1</td>
+      <td>  2</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m16740</th>
+      <th>Charlotte-Gastonia-Concord, NC-SC</th>
+      <td>  3</td>
+      <td>  1</td>
+      <td>  4</td>
+    </tr>
+    <tr>
+      <th>m16820</th>
+      <th>Charlottesville, VA</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m16860</th>
+      <th>Chattanooga, TN-GA</th>
+      <td>  2</td>
+      <td>  1</td>
+      <td>  2</td>
+    </tr>
+    <tr>
+      <th>m16940</th>
+      <th>Cheyenne, WY</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  2</td>
+    </tr>
+    <tr>
+      <th>m16980</th>
+      <th>Chicago-Naperville-Joliet, IL-IN-WI</th>
+      <td> 18</td>
+      <td> 12</td>
+      <td>  8</td>
+    </tr>
+    <tr>
+      <th>m17020</th>
+      <th>Chico, CA</th>
+      <td>  2</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m17140</th>
+      <th>Cincinnati-Middletown, OH-KY-IN</th>
+      <td>  3</td>
+      <td>  4</td>
+      <td>  4</td>
+    </tr>
+    <tr>
+      <th>m17300</th>
+      <th>Clarksville, TN-KY</th>
+      <td>  3</td>
+      <td>  3</td>
+      <td>  2</td>
+    </tr>
+    <tr>
+      <th>m17420</th>
+      <th>Cleveland, TN</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m17460</th>
+      <th>Cleveland-Elyria-Mentor, OH</th>
+      <td>  3</td>
+      <td>  9</td>
+      <td>  9</td>
+    </tr>
+    <tr>
+      <th>m17660</th>
+      <th>Coeur d'Alene, ID</th>
+      <td>  0</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m17780</th>
+      <th>College Station-Bryan, TX</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m17820</th>
+      <th>Colorado Springs, CO</th>
+      <td>  1</td>
+      <td>  2</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m17860</th>
+      <th>Columbia, MO</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m17900</th>
+      <th>Columbia, SC</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m17980</th>
+      <th>Columbus, GA-AL</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m18020</th>
+      <th>Columbus, IN</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m18140</th>
+      <th>Columbus, OH</th>
+      <td>  5</td>
+      <td>  7</td>
+      <td>  9</td>
+    </tr>
+    <tr>
+      <th>m18580</th>
+      <th>Corpus Christi, TX</th>
+      <td>  2</td>
+      <td>  2</td>
+      <td>  2</td>
+    </tr>
+    <tr>
+      <th>m18700</th>
+      <th>Corvallis, OR</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m19060</th>
+      <th>Cumberland, MD-WV</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m19100</th>
+      <th>Dallas-Fort Worth-Arlington, TX</th>
+      <td> 11</td>
+      <td> 15</td>
+      <td> 11</td>
+    </tr>
+    <tr>
+      <th>m19140</th>
+      <th>Dalton, GA</th>
+      <td>  1</td>
+      <td>  2</td>
+      <td>  2</td>
+    </tr>
+    <tr>
+      <th>m19180</th>
+      <th>Danville, IL</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m19260</th>
+      <th>Danville, VA</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m19340</th>
+      <th>Davenport-Moline-Rock Island, IA-IL</th>
+      <td>  2</td>
+      <td>  2</td>
+      <td>  2</td>
+    </tr>
+    <tr>
+      <th>m19380</th>
+      <th>Dayton, OH</th>
+      <td>  3</td>
+      <td>  2</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m19460</th>
+      <th>Decatur, AL</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m19500</th>
+      <th>Decatur, IL</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m19660</th>
+      <th>Deltona-Daytona Beach-Ormond Beach, FL</th>
+      <td>  5</td>
+      <td>  3</td>
+      <td>  3</td>
+    </tr>
+    <tr>
+      <th>m19740</th>
+      <th>Denver-Aurora, CO</th>
+      <td>  4</td>
+      <td>  6</td>
+      <td>  6</td>
+    </tr>
+    <tr>
+      <th>m19780</th>
+      <th>Des Moines, IA</th>
+      <td>  2</td>
+      <td>  1</td>
+      <td>  3</td>
+    </tr>
+    <tr>
+      <th>m19820</th>
+      <th>Detroit-Warren-Livonia, MI</th>
+      <td> 18</td>
+      <td> 27</td>
+      <td> 35</td>
+    </tr>
+    <tr>
+      <th>m20020</th>
+      <th>Dothan, AL</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m20100</th>
+      <th>Dover, DE</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m20220</th>
+      <th>Dubuque, IA</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m20260</th>
+      <th>Duluth, MN-WI</th>
+      <td>  2</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m20500</th>
+      <th>Durham, NC</th>
+      <td>  2</td>
+      <td>  2</td>
+      <td>  2</td>
+    </tr>
+    <tr>
+      <th>m20740</th>
+      <th>Eau Claire, WI</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m20940</th>
+      <th>El Centro, CA</th>
+      <td>  0</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m21060</th>
+      <th>Elizabethtown, KY</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m21140</th>
+      <th>Elkhart-Goshen, IN</th>
+      <td>  2</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m21300</th>
+      <th>Elmira, NY</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m21340</th>
+      <th>El Paso, TX</th>
+      <td>  3</td>
+      <td>  1</td>
+      <td>  3</td>
+    </tr>
+    <tr>
+      <th>m21500</th>
+      <th>Erie, PA</th>
+      <td>  2</td>
+      <td>  2</td>
+      <td>  2</td>
+    </tr>
+    <tr>
+      <th>m21660</th>
+      <th>Eugene-Springfield, OR</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m21780</th>
+      <th>Evansville, IN-KY</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m22020</th>
+      <th>Fargo, ND-MN</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m22140</th>
+      <th>Farmington, NM</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m22180</th>
+      <th>Fayetteville, NC</th>
+      <td>  3</td>
+      <td>  1</td>
+      <td>  2</td>
+    </tr>
+    <tr>
+      <th>m22220</th>
+      <th>Fayetteville-Springdale-Rogers, AR-MO</th>
+      <td>  2</td>
+      <td>  1</td>
+      <td>  3</td>
+    </tr>
+    <tr>
+      <th>m22380</th>
+      <th>Flagstaff, AZ</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m22420</th>
+      <th>Flint, MI</th>
+      <td>  1</td>
+      <td>  2</td>
+      <td>  3</td>
+    </tr>
+    <tr>
+      <th>m22460</th>
+      <th>Florence, AL</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m22500</th>
+      <th>Florence, SC</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m22540</th>
+      <th>Fond du Lac, WI</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m22660</th>
+      <th>Fort Collins-Loveland, CO</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  2</td>
+    </tr>
+    <tr>
+      <th>m22900</th>
+      <th>Fort Smith, AR-OK</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m23020</th>
+      <th>Fort Walton Beach-Crestview-Destin, FL</th>
+      <td>  2</td>
+      <td>  2</td>
+      <td>  4</td>
+    </tr>
+    <tr>
+      <th>m23060</th>
+      <th>Fort Wayne, IN</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m23420</th>
+      <th>Fresno, CA</th>
+      <td>  1</td>
+      <td>  2</td>
+      <td>  2</td>
+    </tr>
+    <tr>
+      <th>m23460</th>
+      <th>Gadsden, AL</th>
+      <td>  1</td>
+      <td>  2</td>
+      <td>  2</td>
+    </tr>
+    <tr>
+      <th>m23540</th>
+      <th>Gainesville, FL</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  2</td>
+    </tr>
+    <tr>
+      <th>m23580</th>
+      <th>Gainesville, GA</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m24020</th>
+      <th>Glens Falls, NY</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m24140</th>
+      <th>Goldsboro, NC</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m24220</th>
+      <th>Grand Forks, ND-MN</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m24300</th>
+      <th>Grand Junction, CO</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m24340</th>
+      <th>Grand Rapids-Wyoming, MI</th>
+      <td>  1</td>
+      <td>  4</td>
+      <td>  5</td>
+    </tr>
+    <tr>
+      <th>m24500</th>
+      <th>Great Falls, MT</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m24540</th>
+      <th>Greeley, CO</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m24580</th>
+      <th>Green Bay, WI</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m24660</th>
+      <th>Greensboro-High Point, NC</th>
+      <td>  5</td>
+      <td>  2</td>
+      <td>  2</td>
+    </tr>
+    <tr>
+      <th>m24780</th>
+      <th>Greenville, NC</th>
+      <td>  2</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m24860</th>
+      <th>Greenville, SC</th>
+      <td>  2</td>
+      <td>  2</td>
+      <td>  2</td>
+    </tr>
+    <tr>
+      <th>m25060</th>
+      <th>Gulfport-Biloxi, MS</th>
+      <td>  1</td>
+      <td>  2</td>
+      <td>  3</td>
+    </tr>
+    <tr>
+      <th>m25180</th>
+      <th>Hagerstown-Martinsburg, MD-WV</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m25260</th>
+      <th>Hanford-Corcoran, CA</th>
+      <td>  0</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m25420</th>
+      <th>Harrisburg-Carlisle, PA</th>
+      <td>  3</td>
+      <td>  3</td>
+      <td>  2</td>
+    </tr>
+    <tr>
+      <th>m25500</th>
+      <th>Harrisonburg, VA</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m25540</th>
+      <th>Hartford-West Hartford-East Hartford, CT</th>
+      <td>  3</td>
+      <td>  7</td>
+      <td>  6</td>
+    </tr>
+    <tr>
+      <th>m25620</th>
+      <th>Hattiesburg, MS</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m25860</th>
+      <th>Hickory-Morganton-Lenoir, NC</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m25980</th>
+      <th>Hinesville-Fort Stewart, GA</th>
+      <td>  1</td>
+      <td>  0</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m26100</th>
+      <th>Holland-Grand Haven, MI</th>
+      <td>  3</td>
+      <td>  1</td>
+      <td>  2</td>
+    </tr>
+    <tr>
+      <th>m26300</th>
+      <th>Hot Springs, AR</th>
+      <td>  0</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m26380</th>
+      <th>Houma-Bayou Cane-Thibodaux, LA</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m26420</th>
+      <th>Houston-Baytown-Sugar Land, TX</th>
+      <td> 10</td>
+      <td>  8</td>
+      <td>  9</td>
+    </tr>
+    <tr>
+      <th>m26580</th>
+      <th>Huntington-Ashland, WV-KY-OH</th>
+      <td>  2</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m26620</th>
+      <th>Huntsville, AL</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m26820</th>
+      <th>Idaho Falls, ID</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m26900</th>
+      <th>Indianapolis, IN</th>
+      <td>  6</td>
+      <td>  2</td>
+      <td>  5</td>
+    </tr>
+    <tr>
+      <th>m26980</th>
+      <th>Iowa City, IA</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m27060</th>
+      <th>Ithaca, NY</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m27100</th>
+      <th>Jackson, MI</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m27140</th>
+      <th>Jackson, MS</th>
+      <td>  1</td>
+      <td>  2</td>
+      <td>  2</td>
+    </tr>
+    <tr>
+      <th>m27180</th>
+      <th>Jackson, TN</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m27260</th>
+      <th>Jacksonville, FL</th>
+      <td>  3</td>
+      <td>  2</td>
+      <td>  2</td>
+    </tr>
+    <tr>
+      <th>m27340</th>
+      <th>Jacksonville, NC</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m27500</th>
+      <th>Janesville, WI</th>
+      <td>  2</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m27620</th>
+      <th>Jefferson City, MO</th>
+      <td>  0</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m27740</th>
+      <th>Johnson City, TN</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m27780</th>
+      <th>Johnstown, PA</th>
+      <td>  3</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m27860</th>
+      <th>Jonesboro, AR</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m27900</th>
+      <th>Joplin, MO</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m28020</th>
+      <th>Kalamazoo-Portage, MI</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m28100</th>
+      <th>Kankakee-Bradley, IL</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m28140</th>
+      <th>Kansas City, MO-KS</th>
+      <td>  5</td>
+      <td>  5</td>
+      <td>  8</td>
+    </tr>
+    <tr>
+      <th>m28420</th>
+      <th>Kennewick-Richland-Pasco, WA</th>
+      <td>  2</td>
+      <td>  2</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m28660</th>
+      <th>Killeen-Temple-Fort Hood, TX</th>
+      <td>  2</td>
+      <td>  2</td>
+      <td>  2</td>
+    </tr>
+    <tr>
+      <th>m28700</th>
+      <th>Kingsport-Bristol, TN-VA</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  2</td>
+    </tr>
+    <tr>
+      <th>m28740</th>
+      <th>Kingston, NY</th>
+      <td>  2</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m28940</th>
+      <th>Knoxville, TN</th>
+      <td>  1</td>
+      <td>  2</td>
+      <td>  2</td>
+    </tr>
+    <tr>
+      <th>m29020</th>
+      <th>Kokomo, IN</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m29100</th>
+      <th>La Crosse, WI-MN</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m29140</th>
+      <th>Lafayette, IN</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m29180</th>
+      <th>Lafayette, LA</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m29340</th>
+      <th>Lake Charles, LA</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m29460</th>
+      <th>Lakeland-Winter Haven, FL</th>
+      <td>  2</td>
+      <td>  2</td>
+      <td>  3</td>
+    </tr>
+    <tr>
+      <th>m29540</th>
+      <th>Lancaster, PA</th>
+      <td>  2</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m29620</th>
+      <th>Lansing-East Lansing, MI</th>
+      <td>  2</td>
+      <td>  2</td>
+      <td>  2</td>
+    </tr>
+    <tr>
+      <th>m29700</th>
+      <th>Laredo, TX</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m29740</th>
+      <th>Las Cruces, NM</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m29820</th>
+      <th>Las Vegas-Paradise, NV</th>
+      <td>  1</td>
+      <td>  3</td>
+      <td>  5</td>
+    </tr>
+    <tr>
+      <th>m29940</th>
+      <th>Lawrence, KS</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m30020</th>
+      <th>Lawton, OK</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  2</td>
+    </tr>
+    <tr>
+      <th>m30140</th>
+      <th>Lebanon, PA</th>
+      <td>  0</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m30300</th>
+      <th>Lewiston, ID-WA</th>
+      <td>  0</td>
+      <td>  0</td>
+      <td>  0</td>
+    </tr>
+    <tr>
+      <th>m30340</th>
+      <th>Lewiston-Auburn, ME</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m30460</th>
+      <th>Lexington-Fayette, KY</th>
+      <td>  1</td>
+      <td>  2</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m30620</th>
+      <th>Lima, OH</th>
+      <td>  2</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m30700</th>
+      <th>Lincoln, NE</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m30780</th>
+      <th>Little Rock-North Little Rock, AR</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  2</td>
+    </tr>
+    <tr>
+      <th>m30860</th>
+      <th>Logan, UT-ID</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m30980</th>
+      <th>Longview, TX</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m31020</th>
+      <th>Longview-Kelso, WA</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m31100</th>
+      <th>Los Angeles-Long Beach-Santa Ana, CA</th>
+      <td> 42</td>
+      <td> 43</td>
+      <td> 54</td>
+    </tr>
+    <tr>
+      <th>m31140</th>
+      <th>Louisville, KY-IN</th>
+      <td>  5</td>
+      <td>  3</td>
+      <td>  2</td>
+    </tr>
+    <tr>
+      <th>m31180</th>
+      <th>Lubbock, TX</th>
+      <td>  1</td>
+      <td>  2</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m31340</th>
+      <th>Lynchburg, VA</th>
+      <td>  2</td>
+      <td>  2</td>
+      <td>  2</td>
+    </tr>
+    <tr>
+      <th>m31420</th>
+      <th>Macon, GA</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m31460</th>
+      <th>Madera, CA</th>
+      <td>  0</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m31540</th>
+      <th>Madison, WI</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m31700</th>
+      <th>Manchester-Nashua, NH</th>
+      <td>  2</td>
+      <td>  2</td>
+      <td>  2</td>
+    </tr>
+    <tr>
+      <th>m31900</th>
+      <th>Mansfield, OH</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m32580</th>
+      <th>McAllen-Edinburg-Pharr, TX</th>
+      <td>  2</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m32780</th>
+      <th>Medford, OR</th>
+      <td>  1</td>
+      <td>  3</td>
+      <td>  2</td>
+    </tr>
+    <tr>
+      <th>m32820</th>
+      <th>Memphis, TN-MS-AR</th>
+      <td>  3</td>
+      <td>  4</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m32900</th>
+      <th>Merced, CA</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m33100</th>
+      <th>Miami-Fort Lauderdale-Miami Beach, FL</th>
+      <td>  8</td>
+      <td> 14</td>
+      <td>  9</td>
+    </tr>
+    <tr>
+      <th>m33140</th>
+      <th>Michigan City-La Porte, IN</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  0</td>
+    </tr>
+    <tr>
+      <th>m33260</th>
+      <th>Midland, TX</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m33340</th>
+      <th>Milwaukee-Waukesha-West Allis, WI</th>
+      <td>  3</td>
+      <td>  7</td>
+      <td>  6</td>
+    </tr>
+    <tr>
+      <th>m33460</th>
+      <th>Minneapolis-St. Paul-Bloomington, MN-WI</th>
+      <td>  8</td>
+      <td>  5</td>
+      <td>  6</td>
+    </tr>
+    <tr>
+      <th>m33540</th>
+      <th>Missoula, MT</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m33660</th>
+      <th>Mobile, AL</th>
+      <td>  2</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m33700</th>
+      <th>Modesto, CA</th>
+      <td>  1</td>
+      <td>  2</td>
+      <td>  4</td>
+    </tr>
+    <tr>
+      <th>m33740</th>
+      <th>Monroe, LA</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m33780</th>
+      <th>Monroe, MI</th>
+      <td>  2</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m33860</th>
+      <th>Montgomery, AL</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m34060</th>
+      <th>Morgantown, WV</th>
+      <td>  0</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m34100</th>
+      <th>Morristown, TN</th>
+      <td>  0</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m34580</th>
+      <th>Mount Vernon-Anacortes, WA</th>
+      <td>  0</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m34620</th>
+      <th>Muncie, IN</th>
+      <td>  1</td>
+      <td>  2</td>
+      <td>  2</td>
+    </tr>
+    <tr>
+      <th>m34740</th>
+      <th>Muskegon-Norton Shores, MI</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m34820</th>
+      <th>Myrtle Beach-Conway-North Myrtle Beach, SC</th>
+      <td>  0</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m34900</th>
+      <th>Napa, CA</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m34940</th>
+      <th>Naples-Marco Island, FL</th>
+      <td>  1</td>
+      <td>  2</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m34980</th>
+      <th>Nashville-Davidson--Murfreesboro, TN</th>
+      <td>  4</td>
+      <td>  3</td>
+      <td>  4</td>
+    </tr>
+    <tr>
+      <th>m35300</th>
+      <th>New Haven-Milford, CT</th>
+      <td>  4</td>
+      <td>  2</td>
+      <td>  3</td>
+    </tr>
+    <tr>
+      <th>m35380</th>
+      <th>New Orleans-Metairie-Kenner, LA</th>
+      <td>  9</td>
+      <td>  7</td>
+      <td>  7</td>
+    </tr>
+    <tr>
+      <th>m35620</th>
+      <th>New York-Northern New Jersey-Long Island, NY-NJ-PA</th>
+      <td> 28</td>
+      <td> 25</td>
+      <td> 23</td>
+    </tr>
+    <tr>
+      <th>m35660</th>
+      <th>Niles-Benton Harbor, MI</th>
+      <td>  3</td>
+      <td>  4</td>
+      <td>  4</td>
+    </tr>
+    <tr>
+      <th>m35980</th>
+      <th>Norwich-New London, CT</th>
+      <td>  3</td>
+      <td>  2</td>
+      <td>  3</td>
+    </tr>
+    <tr>
+      <th>m36100</th>
+      <th>Ocala, FL</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m36140</th>
+      <th>Ocean City, NJ</th>
+      <td>  1</td>
+      <td>  2</td>
+      <td>  2</td>
+    </tr>
+    <tr>
+      <th>m36220</th>
+      <th>Odessa, TX</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m36260</th>
+      <th>Ogden-Clearfield, UT</th>
+      <td>  2</td>
+      <td>  1</td>
+      <td>  3</td>
+    </tr>
+    <tr>
+      <th>m36420</th>
+      <th>Oklahoma City, OK</th>
+      <td>  4</td>
+      <td>  6</td>
+      <td>  3</td>
+    </tr>
+    <tr>
+      <th>m36500</th>
+      <th>Olympia, WA</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  3</td>
+    </tr>
+    <tr>
+      <th>m36540</th>
+      <th>Omaha-Council Bluffs, NE-IA</th>
+      <td>  2</td>
+      <td>  4</td>
+      <td>  8</td>
+    </tr>
+    <tr>
+      <th>m36740</th>
+      <th>Orlando, FL</th>
+      <td>  2</td>
+      <td>  6</td>
+      <td>  5</td>
+    </tr>
+    <tr>
+      <th>m36780</th>
+      <th>Oshkosh-Neenah, WI</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m36980</th>
+      <th>Owensboro, KY</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m37100</th>
+      <th>Oxnard-Thousand Oaks-Ventura, CA</th>
+      <td>  2</td>
+      <td>  7</td>
+      <td>  6</td>
+    </tr>
+    <tr>
+      <th>m37340</th>
+      <th>Palm Bay-Melbourne-Titusville, FL</th>
+      <td>  5</td>
+      <td>  3</td>
+      <td>  4</td>
+    </tr>
+    <tr>
+      <th>m37460</th>
+      <th>Panama City-Lynn Haven, FL</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m37620</th>
+      <th>Parkersburg-Marietta, WV-OH</th>
+      <td>  2</td>
+      <td>  1</td>
+      <td>  2</td>
+    </tr>
+    <tr>
+      <th>m37700</th>
+      <th>Pascagoula, MS</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  2</td>
+    </tr>
+    <tr>
+      <th>m37860</th>
+      <th>Pensacola-Ferry Pass-Brent, FL</th>
+      <td>  2</td>
+      <td>  2</td>
+      <td>  2</td>
+    </tr>
+    <tr>
+      <th>m37900</th>
+      <th>Peoria, IL</th>
+      <td>  2</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m37980</th>
+      <th>Philadelphia-Camden-Wilmington, PA-NJ-DE-MD</th>
+      <td> 23</td>
+      <td> 14</td>
+      <td>  9</td>
+    </tr>
+    <tr>
+      <th>m38060</th>
+      <th>Phoenix-Mesa-Scottsdale, AZ</th>
+      <td> 12</td>
+      <td> 12</td>
+      <td> 14</td>
+    </tr>
+    <tr>
+      <th>m38220</th>
+      <th>Pine Bluff, AR</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m38300</th>
+      <th>Pittsburgh, PA</th>
+      <td> 10</td>
+      <td>  9</td>
+      <td> 11</td>
+    </tr>
+    <tr>
+      <th>m38340</th>
+      <th>Pittsfield, MA</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m38540</th>
+      <th>Pocatello, ID</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m38860</th>
+      <th>Portland-South Portland, ME</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m38900</th>
+      <th>Portland-Vancouver-Beaverton, OR-WA</th>
+      <td>  2</td>
+      <td>  3</td>
+      <td>  7</td>
+    </tr>
+    <tr>
+      <th>m38940</th>
+      <th>Port St. Lucie-Fort Pierce, FL</th>
+      <td>  2</td>
+      <td>  2</td>
+      <td>  3</td>
+    </tr>
+    <tr>
+      <th>m39100</th>
+      <th>Poughkeepsie-Newburgh-Middletown, NY</th>
+      <td>  3</td>
+      <td>  4</td>
+      <td>  5</td>
+    </tr>
+    <tr>
+      <th>m39140</th>
+      <th>Prescott, AZ</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  2</td>
+    </tr>
+    <tr>
+      <th>m39300</th>
+      <th>Providence-New Bedford-Fall River, RI-MA</th>
+      <td> 11</td>
+      <td> 11</td>
+      <td>  8</td>
+    </tr>
+    <tr>
+      <th>m39340</th>
+      <th>Provo-Orem, UT</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  2</td>
+    </tr>
+    <tr>
+      <th>m39380</th>
+      <th>Pueblo, CO</th>
+      <td>  3</td>
+      <td>  1</td>
+      <td>  2</td>
+    </tr>
+    <tr>
+      <th>m39460</th>
+      <th>Punta Gorda, FL</th>
+      <td>  2</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m39540</th>
+      <th>Racine, WI</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  4</td>
+    </tr>
+    <tr>
+      <th>m39580</th>
+      <th>Raleigh-Cary, NC</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  2</td>
+    </tr>
+    <tr>
+      <th>m39660</th>
+      <th>Rapid City, SD</th>
+      <td>  1</td>
+      <td>  2</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m39740</th>
+      <th>Reading, PA</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  3</td>
+    </tr>
+    <tr>
+      <th>m39820</th>
+      <th>Redding, CA</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m39900</th>
+      <th>Reno-Sparks, NV</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m40060</th>
+      <th>Richmond, VA</th>
+      <td>  1</td>
+      <td>  3</td>
+      <td>  3</td>
+    </tr>
+    <tr>
+      <th>m40140</th>
+      <th>Riverside-San Bernardino-Ontario, CA</th>
+      <td>  8</td>
+      <td> 16</td>
+      <td> 24</td>
+    </tr>
+    <tr>
+      <th>m40220</th>
+      <th>Roanoke, VA</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m40340</th>
+      <th>Rochester, MN</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m40380</th>
+      <th>Rochester, NY</th>
+      <td>  3</td>
+      <td>  3</td>
+      <td>  2</td>
+    </tr>
+    <tr>
+      <th>m40420</th>
+      <th>Rockford, IL</th>
+      <td>  1</td>
+      <td>  2</td>
+      <td>  2</td>
+    </tr>
+    <tr>
+      <th>m40580</th>
+      <th>Rocky Mount, NC</th>
+      <td>  0</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m40660</th>
+      <th>Rome, GA</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m40900</th>
+      <th>Sacramento--Arden-Arcade--Roseville, CA</th>
+      <td>  2</td>
+      <td>  3</td>
+      <td>  5</td>
+    </tr>
+    <tr>
+      <th>m40980</th>
+      <th>Saginaw-Saginaw Township North, MI</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m41060</th>
+      <th>St. Cloud, MN</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m41100</th>
+      <th>St. George, UT</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m41140</th>
+      <th>St. Joseph, MO-KS</th>
+      <td>  2</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m41180</th>
+      <th>St. Louis, MO-IL</th>
+      <td>  9</td>
+      <td>  5</td>
+      <td>  7</td>
+    </tr>
+    <tr>
+      <th>m41420</th>
+      <th>Salem, OR</th>
+      <td>  1</td>
+      <td>  2</td>
+      <td>  2</td>
+    </tr>
+    <tr>
+      <th>m41500</th>
+      <th>Salinas, CA</th>
+      <td>  3</td>
+      <td>  3</td>
+      <td>  4</td>
+    </tr>
+    <tr>
+      <th>m41540</th>
+      <th>Salisbury, MD</th>
+      <td>  0</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m41620</th>
+      <th>Salt Lake City, UT</th>
+      <td>  2</td>
+      <td>  3</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m41660</th>
+      <th>San Angelo, TX</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  2</td>
+    </tr>
+    <tr>
+      <th>m41700</th>
+      <th>San Antonio, TX</th>
+      <td>  6</td>
+      <td>  3</td>
+      <td>  4</td>
+    </tr>
+    <tr>
+      <th>m41740</th>
+      <th>San Diego-Carlsbad-San Marcos, CA</th>
+      <td>  9</td>
+      <td> 10</td>
+      <td> 12</td>
+    </tr>
+    <tr>
+      <th>m41780</th>
+      <th>Sandusky, OH</th>
+      <td>  0</td>
+      <td>  2</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m41860</th>
+      <th>San Francisco-Oakland-Fremont, CA</th>
+      <td>  3</td>
+      <td>  2</td>
+      <td>  3</td>
+    </tr>
+    <tr>
+      <th>m41940</th>
+      <th>San Jose-Sunnyvale-Santa Clara, CA</th>
+      <td>  4</td>
+      <td>  6</td>
+      <td>  7</td>
+    </tr>
+    <tr>
+      <th>m42020</th>
+      <th>San Luis Obispo-Paso Robles, CA</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  2</td>
+    </tr>
+    <tr>
+      <th>m42060</th>
+      <th>Santa Barbara-Santa Maria-Goleta, CA</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m42100</th>
+      <th>Santa Cruz-Watsonville, CA</th>
+      <td>  2</td>
+      <td>  1</td>
+      <td>  2</td>
+    </tr>
+    <tr>
+      <th>m42140</th>
+      <th>Santa Fe, NM</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m42220</th>
+      <th>Santa Rosa-Petaluma, CA</th>
+      <td>  1</td>
+      <td>  3</td>
+      <td>  2</td>
+    </tr>
+    <tr>
+      <th>m42260</th>
+      <th>Sarasota-Bradenton-Venice, FL</th>
+      <td>  3</td>
+      <td>  3</td>
+      <td>  3</td>
+    </tr>
+    <tr>
+      <th>m42340</th>
+      <th>Savannah, GA</th>
+      <td>  2</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m42540</th>
+      <th>Scranton--Wilkes-Barre, PA</th>
+      <td>  2</td>
+      <td>  3</td>
+      <td>  3</td>
+    </tr>
+    <tr>
+      <th>m42660</th>
+      <th>Seattle-Tacoma-Bellevue, WA</th>
+      <td>  5</td>
+      <td>  7</td>
+      <td>  8</td>
+    </tr>
+    <tr>
+      <th>m43100</th>
+      <th>Sheboygan, WI</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  2</td>
+    </tr>
+    <tr>
+      <th>m43300</th>
+      <th>Sherman-Denison, TX</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  0</td>
+    </tr>
+    <tr>
+      <th>m43340</th>
+      <th>Shreveport-Bossier City, LA</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m43580</th>
+      <th>Sioux City, IA-NE-SD</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m43620</th>
+      <th>Sioux Falls, SD</th>
+      <td>  2</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m43780</th>
+      <th>South Bend-Mishawaka, IN-MI</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m43900</th>
+      <th>Spartanburg, SC</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  2</td>
+    </tr>
+    <tr>
+      <th>m44060</th>
+      <th>Spokane, WA</th>
+      <td>  1</td>
+      <td>  2</td>
+      <td>  2</td>
+    </tr>
+    <tr>
+      <th>m44100</th>
+      <th>Springfield, IL</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m44140</th>
+      <th>Springfield, MA</th>
+      <td>  2</td>
+      <td>  3</td>
+      <td>  3</td>
+    </tr>
+    <tr>
+      <th>m44180</th>
+      <th>Springfield, MO</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m44220</th>
+      <th>Springfield, OH</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m44300</th>
+      <th>State College, PA</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m44700</th>
+      <th>Stockton, CA</th>
+      <td>  2</td>
+      <td>  3</td>
+      <td>  3</td>
+    </tr>
+    <tr>
+      <th>m44940</th>
+      <th>Sumter, SC</th>
+      <td>  0</td>
+      <td>  1</td>
+      <td>  2</td>
+    </tr>
+    <tr>
+      <th>m45060</th>
+      <th>Syracuse, NY</th>
+      <td>  2</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m45220</th>
+      <th>Tallahassee, FL</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m45300</th>
+      <th>Tampa-St. Petersburg-Clearwater, FL</th>
+      <td> 14</td>
+      <td> 11</td>
+      <td> 18</td>
+    </tr>
+    <tr>
+      <th>m45460</th>
+      <th>Terre Haute, IN</th>
+      <td>  2</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m45500</th>
+      <th>Texarkana, TX-Texarkana, AR</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m45780</th>
+      <th>Toledo, OH</th>
+      <td>  5</td>
+      <td>  4</td>
+      <td>  5</td>
+    </tr>
+    <tr>
+      <th>m45820</th>
+      <th>Topeka, KS</th>
+      <td>  2</td>
+      <td>  2</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m45940</th>
+      <th>Trenton-Ewing, NJ</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m46060</th>
+      <th>Tucson, AZ</th>
+      <td>  3</td>
+      <td>  2</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m46140</th>
+      <th>Tulsa, OK</th>
+      <td>  4</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m46220</th>
+      <th>Tuscaloosa, AL</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m46340</th>
+      <th>Tyler, TX</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m46540</th>
+      <th>Utica-Rome, NY</th>
+      <td>  2</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m46660</th>
+      <th>Valdosta, GA</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m46700</th>
+      <th>Vallejo-Fairfield, CA</th>
+      <td>  4</td>
+      <td>  3</td>
+      <td>  4</td>
+    </tr>
+    <tr>
+      <th>m46940</th>
+      <th>Vero Beach, FL</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m47020</th>
+      <th>Victoria, TX</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m47220</th>
+      <th>Vineland-Millville-Bridgeton, NJ</th>
+      <td>  2</td>
+      <td>  1</td>
+      <td>  0</td>
+    </tr>
+    <tr>
+      <th>m47260</th>
+      <th>Virginia Beach-Norfolk-Newport News, VA-NC</th>
+      <td>  5</td>
+      <td> 10</td>
+      <td>  8</td>
+    </tr>
+    <tr>
+      <th>m47300</th>
+      <th>Visalia-Porterville, CA</th>
+      <td>  2</td>
+      <td>  2</td>
+      <td>  2</td>
+    </tr>
+    <tr>
+      <th>m47380</th>
+      <th>Waco, TX</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m47580</th>
+      <th>Warner Robins, GA</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m47900</th>
+      <th>Washington-Arlington-Alexandria, DC-VA-MD-WV</th>
+      <td>  7</td>
+      <td>  6</td>
+      <td> 13</td>
+    </tr>
+    <tr>
+      <th>m47940</th>
+      <th>Waterloo-Cedar Falls, IA</th>
+      <td>  1</td>
+      <td>  3</td>
+      <td>  3</td>
+    </tr>
+    <tr>
+      <th>m48140</th>
+      <th>Wausau, WI</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m48260</th>
+      <th>Weirton-Steubenville, WV-OH</th>
+      <td>  3</td>
+      <td>  3</td>
+      <td>  3</td>
+    </tr>
+    <tr>
+      <th>m48300</th>
+      <th>Wenatchee, WA</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m48540</th>
+      <th>Wheeling, WV-OH</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m48620</th>
+      <th>Wichita, KS</th>
+      <td>  1</td>
+      <td>  2</td>
+      <td>  2</td>
+    </tr>
+    <tr>
+      <th>m48660</th>
+      <th>Wichita Falls, TX</th>
+      <td>  2</td>
+      <td>  3</td>
+      <td>  3</td>
+    </tr>
+    <tr>
+      <th>m48700</th>
+      <th>Williamsport, PA</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m48900</th>
+      <th>Wilmington, NC</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m49020</th>
+      <th>Winchester, VA-WV</th>
+      <td>  2</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m49180</th>
+      <th>Winston-Salem, NC</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m49340</th>
+      <th>Worcester, MA</th>
+      <td>  2</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m49420</th>
+      <th>Yakima, WA</th>
+      <td>  1</td>
+      <td>  2</td>
+      <td>  2</td>
+    </tr>
+    <tr>
+      <th>m49620</th>
+      <th>York-Hanover, PA</th>
+      <td>  1</td>
+      <td>  2</td>
+      <td>  3</td>
+    </tr>
+    <tr>
+      <th>m49660</th>
+      <th>Youngstown-Warren-Boardman, OH-PA</th>
+      <td>  2</td>
+      <td>  2</td>
+      <td>  4</td>
+    </tr>
+    <tr>
+      <th>m49700</th>
+      <th>Yuba City-Marysville, CA</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+    <tr>
+      <th>m49740</th>
+      <th>Yuma, AZ</th>
+      <td>  1</td>
+      <td>  1</td>
+      <td>  1</td>
+    </tr>
+  </tbody>
+</table>
+
+
+      </section>
+
+      <footer>
+        <p><small>Theme inspired by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+
+    <script src="javascripts/scale.fix.js"></script>
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-6032674-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
